@@ -80,11 +80,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen">
       <header className={cn(
         "sticky top-0 z-50 flex h-16 items-center gap-4 border-b px-4 lg:px-6 transition-colors duration-300",
-        isHome ? 'bg-transparent border-transparent text-white' : 'bg-background text-foreground'
+        isHome ? 'bg-transparent border-transparent text-white' : 'bg-accent text-accent-foreground'
         )}>
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <GraduationCap className={cn("h-6 w-6", isHome ? 'text-white' : 'text-accent')} />
-          <span className={cn("text-lg font-headline text-accent", isHome ? 'text-white' : 'text-accent')}>UniFriend</span>
+          <GraduationCap className={cn("h-6 w-6", isHome ? 'text-white' : 'text-accent-foreground')} />
+          <span className={cn("text-lg font-headline", isHome ? 'text-white' : 'text-accent-foreground')}>UniFriend</span>
         </Link>
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ml-auto">
             {navLinks.map(link => (
@@ -92,8 +92,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     key={link.href} 
                     href={link.href}
                     className={cn(
-                        "transition-colors hover:text-foreground/80",
-                        pathname === link.href ? "text-foreground font-semibold" : "text-muted-foreground"
+                        "transition-colors",
+                        pathname === link.href ? "text-accent-foreground font-semibold" : "text-accent-foreground/80 hover:text-accent-foreground"
                     )}
                 >
                     {link.label}
@@ -101,15 +101,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             ))}
         </nav>
          <div className="hidden md:flex items-center gap-2 ml-4">
-            <Button variant="ghost">Login</Button>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Register</Button>
+            <Button variant="ghost" className={cn(isHome ? 'text-white hover:bg-white/10 hover:text-white' : 'text-accent-foreground hover:bg-white/10 hover:text-accent-foreground')}>Login</Button>
+            <Button className={cn(isHome ? 'bg-white text-accent' : 'bg-accent-foreground text-accent')}>Register</Button>
         </div>
         <Sheet>
           <SheetTrigger asChild>
             <Button
               variant="outline"
               size="icon"
-              className="shrink-0 md:hidden ml-auto"
+              className={cn("shrink-0 md:hidden ml-auto", isHome ? 'bg-transparent text-white border-white' : 'bg-accent text-accent-foreground')}
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle navigation menu</span>
