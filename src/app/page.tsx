@@ -3,25 +3,18 @@ import Link from 'next/link';
 import {
   ArrowRight,
   Search,
-  BookOpen,
-  Scale,
-  GraduationCap,
-  Globe,
-  DollarSign,
-  Building2,
+  Filter,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { UniversityCard } from '@/components/UniversityCard';
 import { getUniversities } from '@/lib/data';
-import { Badge } from '@/components/ui/badge';
 import {
   Select,
   SelectContent,
@@ -29,102 +22,140 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const featuredUniversities = getUniversities().slice(0, 6);
+  const topColleges = getUniversities().slice(0, 3);
+  const heroImage = PlaceHolderImages.find(p => p.id === 'ucl-banner');
 
-  const howItWorks = [
+  const studyGoals = [
     {
-      icon: Search,
-      title: 'Search Universities',
-      description:
-        'Use our powerful search and filters to discover universities that match your criteria.',
+      title: 'Engineering',
+      courses: ['BE/B.Tech', 'Diploma in Engineering', 'ME/M.Tech'],
+      count: 230
     },
     {
-      icon: Scale,
-      title: 'Compare Side-by-Side',
-      description:
-        'Select up to three universities and compare them on key aspects to see how they stack up.',
+      title: 'Management',
+      courses: ['MBA/PGDM', 'BBA/BMS', 'Executive MBA'],
+      count: 180
     },
     {
-      icon: GraduationCap,
-      title: 'Make Informed Decisions',
-      description:
-        'Access detailed information and make a choice that aligns with your academic and career goals.',
+      title: 'Commerce',
+      courses: ['B.Com', 'M.Com'],
+      count: 150
     },
+    {
+      title: 'Arts',
+      courses: ['BA', 'MA', 'BFA', 'BSW'],
+      count: 120
+    }
   ];
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-primary/10 py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            Find & Compare Universities Worldwide
-          </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            Your journey to higher education starts here. Search, compare, and
-            choose the perfect university for you.
-          </p>
+        {heroImage && (
+            <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover"
+                data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container relative mx-auto px-4 text-center">
+          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            Find Your University
+          </Button>
           <div className="mt-10 max-w-4xl mx-auto">
             <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold">Find your perfect university</CardTitle>
+              </CardHeader>
               <CardContent className="p-4 sm:p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="lg:col-span-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+                  <div className="lg:col-span-2 relative">
+                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input
                       type="text"
-                      placeholder="University name or location..."
-                      className="h-12 text-base"
+                      placeholder="Search universities, courses, or exams..."
+                      className="h-12 text-base pl-10"
                     />
                   </div>
                   <Select>
                     <SelectTrigger className="h-12 text-base">
-                      <SelectValue placeholder="Select Country" />
+                      <SelectValue placeholder="State" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="usa">USA</SelectItem>
-                      <SelectItem value="uk">UK</SelectItem>
-                      <SelectItem value="canada">Canada</SelectItem>
-                      <SelectItem value="australia">Australia</SelectItem>
+                      <SelectItem value="ny">New York</SelectItem>
+                      <SelectItem value="ca">California</SelectItem>
+                      <SelectItem value="tx">Texas</SelectItem>
                     </SelectContent>
                   </Select>
                    <Select>
                     <SelectTrigger className="h-12 text-base">
-                      <SelectValue placeholder="Program" />
+                      <SelectValue placeholder="Course Type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="cs">Computer Science</SelectItem>
-                      <SelectItem value="business">Business</SelectItem>
-                      <SelectItem value="engineering">Engineering</SelectItem>
-                      <SelectItem value="medicine">Medicine</SelectItem>
+                      <SelectItem value="full-time">Full-time</SelectItem>
+                      <SelectItem value="part-time">Part-time</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
-                 <div className="mt-4 flex justify-center">
-                   <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full sm:w-auto">
-                    <Search className="mr-2 h-5 w-5" />
-                    Search Universities
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full h-12">
+                    <Filter className="mr-2 h-5 w-5" />
+                    Filter
                   </Button>
-                 </div>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-
-      {/* Featured Universities Section */}
-      <section id="featured" className="py-16 sm:py-24 bg-background">
+      
+      {/* Select Your Study Goal Section */}
+      <section id="study-goal" className="py-16 sm:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Featured Universities
+              Select Your Study Goal
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {studyGoals.map((goal) => (
+              <Card key={goal.title} className="p-6 transition-shadow hover:shadow-lg">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-headline text-xl font-bold">{goal.title}</h3>
+                  <span className="text-xs font-semibold text-muted-foreground bg-secondary px-2 py-1 rounded-full">{goal.count}</span>
+                </div>
+                <div className="mt-4 space-y-2 text-muted-foreground">
+                  {goal.courses.map(course => <p key={course}>{course}</p>)}
+                </div>
+              </Card>
+            ))}
+          </div>
+           <div className="mt-12 text-center">
+            <Button variant="outline">
+              See More
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Colleges Section */}
+      <section id="top-colleges" className="py-16 sm:py-24 bg-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Top Colleges
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Explore top-rated universities from around the globe.
+              A curated list of the best colleges in India.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredUniversities.map((uni) => (
+            {topColleges.map((uni) => (
               <UniversityCard key={uni.id} university={uni} />
             ))}
           </div>
@@ -134,38 +165,6 @@ export default function Home() {
                 Browse All Universities <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-16 sm:py-24 bg-primary/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Three Simple Steps to Your Future
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              Our streamlined process makes finding your dream university easier
-              than ever.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {howItWorks.map((step, index) => (
-              <Card key={index} className="text-center shadow-sm">
-                <CardHeader>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground">
-                    <step.icon className="h-6 w-6" />
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <h3 className="text-xl font-bold font-headline">{step.title}</h3>
-                  <p className="mt-2 text-muted-foreground">
-                    {step.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

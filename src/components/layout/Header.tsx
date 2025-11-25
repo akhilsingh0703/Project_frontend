@@ -8,6 +8,7 @@ import {
   Scale,
   Menu,
   X,
+  User,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -28,9 +29,10 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
+    { href: '/', label: 'Home' },
     { href: '/universities', label: 'Universities' },
     { href: '/compare', label: 'Compare' },
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'Contact' },
   ];
 
   const NavLink = ({
@@ -81,16 +83,11 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <div className="hidden lg:flex flex-1 max-w-sm relative items-center">
-            <Input
-              type="search"
-              placeholder="Search universities..."
-              className="pl-10"
-            />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          </div>
-
+        <div className="flex flex-1 items-center justify-end space-x-2">
+           <div className="hidden sm:flex items-center space-x-2">
+             <Button variant="ghost">Login</Button>
+             <Button>Register</Button>
+           </div>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -125,6 +122,10 @@ export function Header() {
                     </div>
                   ))}
                 </nav>
+                 <div className="mt-auto flex flex-col gap-2 p-6 border-t">
+                    <Button variant="ghost">Login</Button>
+                    <Button>Register</Button>
+                  </div>
               </div>
             </SheetContent>
           </Sheet>
