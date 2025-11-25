@@ -1,9 +1,90 @@
-import type { University } from './types';
+import type { University, Course } from './types';
 import { PlaceHolderImages } from './placeholder-images';
 
 const getImage = (id: string) =>
   PlaceHolderImages.find((img) => img.id === id)?.imageUrl ??
   'https://picsum.photos/seed/placeholder/600/400';
+
+const sampleCourses: Course[] = [
+    {
+      category: 'B.Tech',
+      name: 'Artificial Intelligence & Machine Learning',
+      rating: 3.2,
+      reviews: 3,
+      views: 4,
+      fees: 585000,
+      applicationDate: '7 July - 30 Jul 2025',
+      cutoffRank: '23138',
+      cutoffExam: 'AP-EAPCET'
+    },
+    {
+      category: 'B.Tech',
+      name: 'Computer Science and Biosciences',
+      rating: 4.1,
+      reviews: 12,
+      views: 25,
+      fees: 585000,
+      applicationDate: '7 July - 30 Jul 2025',
+      cutoffRank: '42654',
+      cutoffExam: 'AP-EAPCET'
+    },
+    {
+      category: 'B.Tech',
+      name: 'Internet of Things & Cyber Security Including Blockchain Technology',
+      rating: 4.5,
+      reviews: 8,
+      views: 19,
+      fees: 585000,
+      applicationDate: '7 July - 30 Jul 2025',
+      cutoffRank: '35668',
+      cutoffExam: 'AP-EAPCET'
+    },
+    {
+      category: 'B.Tech',
+      name: 'Electronics & Communication Engineering',
+      rating: 4.5,
+      reviews: 2,
+      views: 10,
+      fees: 525000,
+      applicationDate: '7 July - 30 Jul 2025',
+      cutoffRank: '31925',
+      cutoffExam: 'AP-EAPCET'
+    },
+    {
+      category: 'B.Sc',
+      name: 'Bachelor of Science [B.Sc] {Hons.} (Agriculture)',
+      rating: 4.0,
+      reviews: 15,
+      views: 30,
+      fees: 350000,
+      applicationDate: '1 June - 15 Aug 2025',
+      cutoffRank: 'N/A',
+      cutoffExam: 'Merit-based'
+    },
+    {
+      category: 'B.Pharma',
+      name: 'Bachelor of Pharmacy',
+      rating: 4.2,
+      reviews: 10,
+      views: 22,
+      fees: 400000,
+      applicationDate: '10 June - 20 Aug 2025',
+      cutoffRank: '50123',
+      cutoffExam: 'NEET'
+    },
+     {
+      category: 'Polytechnic',
+      name: 'Diploma in Civil Engineering',
+      rating: 3.8,
+      reviews: 5,
+      views: 15,
+      fees: 150000,
+      applicationDate: '15 May - 30 Jul 2025',
+      cutoffRank: 'N/A',
+      cutoffExam: 'State Polytechnic Entrance'
+    }
+];
+
 
 export const universities: University[] = [
   {
@@ -39,6 +120,7 @@ export const universities: University[] = [
       { name: 'Economics', department: 'School of Humanities and Sciences', duration: '4 years' },
       { name: 'Bioengineering', department: 'School of Engineering', duration: '4 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Computer Science', 'Engineering', 'Biology'],
     tuition: {
       undergraduate: 56169,
@@ -95,6 +177,7 @@ export const universities: University[] = [
         { name: 'Physics', department: 'School of Science', duration: '4 years' },
         { name: 'Architecture', department: 'School of Architecture and Planning', duration: '5 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Engineering', 'Computer Science', 'Mathematics'],
     tuition: {
       undergraduate: 55878,
@@ -148,6 +231,7 @@ export const universities: University[] = [
       { name: 'Commerce', department: 'Rotman School of Management', duration: '4 years' },
       { name: 'Computer Engineering', department: 'Faculty of Applied Science & Engineering', duration: '4 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Life Sciences', 'Commerce', 'Humanities'],
     tuition: {
       undergraduate: 45690,
@@ -196,6 +280,7 @@ export const universities: University[] = [
         { name: 'Medicine', department: 'Medical Sciences Division', duration: '6 years' },
         { name: 'Law', department: 'Law Faculty', duration: '3 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['PPE', 'Medicine', 'Law', 'History'],
     tuition: {
         undergraduate: 28950,
@@ -244,6 +329,7 @@ export const universities: University[] = [
         { name: 'Bachelor of Commerce', department: 'University of Sydney Business School', duration: '3 years' },
         { name: 'Bachelor of Science (Advanced)', department: 'Faculty of Science', duration: '3 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Arts', 'Commerce', 'Science', 'Health Sciences'],
     tuition: {
         undergraduate: 45000,
@@ -292,6 +378,7 @@ export const universities: University[] = [
         { name: 'Mechanical Engineering', department: 'Department of Mechanical and Process Engineering', duration: '3 years' },
         { name: 'Chemistry', department: 'Department of Chemistry and Applied Biosciences', duration: '3 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Engineering', 'Natural Sciences', 'Architecture'],
     tuition: {
         undergraduate: 1460,
@@ -340,6 +427,7 @@ export const universities: University[] = [
         { name: 'Computing (Computer Science)', department: 'School of Computing', duration: '4 years' },
         { name: 'Medicine', department: 'Yong Loo Lin School of Medicine', duration: '5 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Business', 'Computing', 'Engineering'],
     tuition: {
         undergraduate: 17550,
@@ -388,6 +476,7 @@ export const universities: University[] = [
         { name: 'Psychology', department: 'Division of Psychology and Language Sciences', duration: '3 years' },
         { name: 'Architecture', department: 'The Bartlett School of Architecture', duration: '3 years' },
     ],
+    courses: sampleCourses,
     popularPrograms: ['Arts & Humanities', 'Psychology', 'Medicine'],
     tuition: {
         undergraduate: 24500,

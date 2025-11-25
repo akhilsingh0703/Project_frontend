@@ -25,6 +25,7 @@ export type University = {
     graduationRate: number;
   };
   programs: Program[];
+  courses: Course[];
   tuition: {
     undergraduate: number;
     graduate: number;
@@ -53,4 +54,16 @@ export type Program = {
   name: string;
   department: string;
   duration: string;
+};
+
+export type Course = {
+  category: string;
+  name: string;
+  rating: number;
+  reviews: number;
+  views: number;
+  fees: number;
+  applicationDate: string;
+  cutoffRank: string;
+  cutoffExam: string;
 };

@@ -26,6 +26,7 @@ import { AddToCompareButton } from '@/components/AddToCompareButton';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Summary } from './Summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CoursesAndFees } from './CoursesAndFees';
 
 export default function UniversityDetailPage({
   params,
@@ -78,7 +79,7 @@ export default function UniversityDetailPage({
             </div>
             <div className="flex-grow">
               <h1 className="font-headline text-2xl md:text-4xl font-bold">
-                {university.name} Courses & Fees
+                {university.name} Courses &amp; Fees
               </h1>
               <div className="flex flex-wrap items-center text-sm text-gray-300 mt-2 gap-x-4 gap-y-1">
                 <span className="flex items-center"><MapPin className="h-4 w-4 mr-1.5" /> {university.location.city}, {university.location.country}</span>
@@ -111,7 +112,7 @@ export default function UniversityDetailPage({
       </header>
 
       {/* Subnav and Content */}
-      <Tabs defaultValue="info" className="sticky top-0 bg-background z-10 shadow-sm">
+      <Tabs defaultValue="courses" className="sticky top-0 bg-background z-10 shadow-sm">
         <div className="border-b">
            <div className="container mx-auto">
              <TabsList className="bg-transparent p-0 h-14 -mb-px rounded-none">
@@ -276,14 +277,7 @@ export default function UniversityDetailPage({
                 </div>
             </TabsContent>
              <TabsContent value="courses">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Courses & Fees</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Courses and fees information will be displayed here.</p>
-                    </CardContent>
-                </Card>
+                <CoursesAndFees university={university} />
             </TabsContent>
             {/* Add other TabsContent components here */}
         </main>
