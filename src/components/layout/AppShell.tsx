@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -74,11 +75,10 @@ function SidebarNav() {
 export function AppShell({ children }: { children: React.ReactNode }) {
   const { comparisonList } = useComparison();
   const pathname = usePathname();
-  const isHome = pathname === '/';
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="sticky top-0 z-50 flex h-16 items-center gap-4 border-b bg-accent text-accent-foreground px-4 lg:px-6">
+      <header className="sticky top-0 z-50 flex h-16 items-center gap-4 border-b bg-accent px-4 lg:px-6">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <GraduationCap className="h-6 w-6 text-accent-foreground" />
           <span className="text-lg font-headline text-accent-foreground">UniFriend</span>
@@ -98,8 +98,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             ))}
         </nav>
          <div className="hidden md:flex items-center gap-2 ml-4">
-            <Button variant="ghost" className="text-accent-foreground hover:bg-white/10 hover:text-accent-foreground">Login</Button>
-            <Button className="bg-accent-foreground text-accent">Register</Button>
+            <Button asChild variant="ghost" className="text-accent-foreground hover:bg-white/10 hover:text-accent-foreground">
+              <Link href="/login">Login</Link>
+            </Button>
+            <Button asChild className="bg-accent-foreground text-accent">
+              <Link href="/register">Register</Link>
+            </Button>
         </div>
         <Sheet>
           <SheetTrigger asChild>
@@ -134,8 +138,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 ))}
               </nav>
                <div className="flex flex-col gap-2 mt-auto">
-                <Button variant="ghost">Login</Button>
-                <Button className="bg-accent text-accent-foreground hover:bg-accent/90">Register</Button>
+                <Button asChild variant="ghost">
+                  <Link href="/login">Login</Link>
+                </Button>
+                <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Link href="/register">Register</Link>
+                </Button>
               </div>
           </SheetContent>
         </Sheet>
