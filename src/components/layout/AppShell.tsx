@@ -27,6 +27,7 @@ import {
 import { cn } from '@/lib/utils';
 import { useComparison } from '@/hooks/use-comparison';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Footer } from './Footer';
 
 
 const navLinks = [
@@ -143,6 +144,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </Sheet>
       </header>
       <main className="flex-1">{children}</main>
+      <Footer />
     </div>
   );
 }
