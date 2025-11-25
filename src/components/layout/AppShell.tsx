@@ -84,7 +84,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         )}>
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <GraduationCap className={cn("h-6 w-6", isHome ? 'text-white' : 'text-accent')} />
-          <span className="text-lg font-headline">UniFriend</span>
+          <span className={cn("text-lg font-headline", !isHome && "text-accent")}>UniFriend</span>
         </Link>
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ml-auto">
             {navLinks.map(link => (
@@ -119,7 +119,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6 -mx-4 mb-4">
                   <Link href="/" className="flex items-center gap-2 font-semibold">
                   <GraduationCap className="h-6 w-6 text-accent" />
-                  <span className="">UniFriend</span>
+                  <span className="text-accent">UniFriend</span>
                   </Link>
               </div>
               <nav className="grid gap-2 text-base font-medium">
