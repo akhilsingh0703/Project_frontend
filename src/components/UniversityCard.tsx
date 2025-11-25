@@ -75,7 +75,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
             <div className="flex items-center">
                 <Users className="h-4 w-4 mr-2 text-accent" />
                 <div>
-                    <p className="font-semibold">{(university.tuition.undergraduate / 1000).toFixed(0)}k</p>
+                    <p className="font-semibold">₹{(university.tuition.undergraduate / 1000).toFixed(0)}k</p>
                     <p className="text-xs text-muted-foreground">Tuition (UG)</p>
                 </div>
             </div>

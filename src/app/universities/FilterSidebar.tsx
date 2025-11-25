@@ -112,7 +112,7 @@ export function FilterSidebar({
       <div className="space-y-2">
         <div className="flex justify-between items-center">
             <Label>Max. Tuition (UG)</Label>
-            <span className="text-sm font-medium text-accent">${filters.tuition.toLocaleString()}</span>
+            <span className="text-sm font-medium text-accent">₹{filters.tuition.toLocaleString('en-IN')}</span>
         </div>
         <Slider
           defaultValue={[100000]}

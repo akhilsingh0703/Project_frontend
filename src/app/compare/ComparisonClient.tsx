@@ -121,12 +121,12 @@ export function ComparisonClient() {
     {
       title: 'UG Tuition',
       icon: DollarSign,
-      render: (uni: University) => `$${uni.tuition.undergraduate.toLocaleString()}`,
+      render: (uni: University) => `₹${uni.tuition.undergraduate.toLocaleString('en-IN')}`,
     },
     {
       title: 'Room & Board',
       icon: Home,
-      render: (uni: University) => `$${uni.tuition.roomAndBoard.toLocaleString()}`,
+      render: (uni: University) => `₹${uni.tuition.roomAndBoard.toLocaleString('en-IN')}`,
     },
     {
       title: 'Scholarships',
@@ -139,7 +139,7 @@ export function ComparisonClient() {
     {
       title: 'Application Fee',
       icon: FileText,
-      render: (uni: University) => `$${uni.admissions.applicationFee}`,
+      render: (uni: University) => `₹${uni.admissions.applicationFee.toLocaleString('en-IN')}`,
     },
     {
       title: 'SAT Range',

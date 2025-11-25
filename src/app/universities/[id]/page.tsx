@@ -52,7 +52,7 @@ export default function UniversityDetailPage({
 
   const admissionInfo = [
     { label: 'Application Deadline', value: university.admissions.deadline },
-    { label: 'Application Fee', value: `$${university.admissions.applicationFee}` },
+    { label: 'Application Fee', value: `₹${university.admissions.applicationFee.toLocaleString('en-IN')}` },
     { label: 'Required Documents', value: university.admissions.requiredDocuments.join(', ') },
     { label: 'International Students', value: university.admissions.internationalRequirements },
   ];
@@ -176,15 +176,15 @@ export default function UniversityDetailPage({
                     <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                         <div className="p-4 border rounded-lg">
                             <p className="text-sm text-muted-foreground">Undergraduate</p>
-                            <p className="text-2xl font-bold font-headline">${university.tuition.undergraduate.toLocaleString()}</p>
+                            <p className="text-2xl font-bold font-headline">₹{university.tuition.undergraduate.toLocaleString('en-IN')}</p>
                         </div>
                         <div className="p-4 border rounded-lg">
                             <p className="text-sm text-muted-foreground">Graduate</p>
-                            <p className="text-2xl font-bold font-headline">${university.tuition.graduate.toLocaleString()}</p>
+                            <p className="text-2xl font-bold font-headline">₹{university.tuition.graduate.toLocaleString('en-IN')}</p>
                         </div>
                         <div className="p-4 border rounded-lg">
                             <p className="text-sm text-muted-foreground">Room & Board</p>
-                            <p className="text-2xl font-bold font-headline">${university.tuition.roomAndBoard.toLocaleString()}</p>
+                            <p className="text-2xl font-bold font-headline">₹{university.tuition.roomAndBoard.toLocaleString('en-IN')}</p>
                         </div>
                         <div className="md:col-span-3">
                             <h4 className="font-semibold flex items-center justify-center"><Landmark className="mr-2"/>Financial Aid</h4>
