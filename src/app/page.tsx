@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -22,12 +21,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const topColleges = getUniversities().slice(0, 3);
-  const heroImage = PlaceHolderImages.find(p => p.id === 'ucl-banner');
-
+  
   const studyGoals = [
     {
       title: 'Engineering',
@@ -52,24 +49,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative bg-primary/10 py-20 md:py-32">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover"
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="container relative mx-auto px-4 text-center">
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            Find Your University
-          </Button>
-          <div className="mt-10 max-w-4xl mx-auto">
+    <div className="flex flex-col bg-background">
+      {/* Search Section */}
+      <section className="py-12 bg-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">Find your perfect university</CardTitle>
@@ -115,7 +99,7 @@ export default function Home() {
       </section>
       
       {/* Select Your Study Goal Section */}
-      <section id="study-goal" className="py-16 sm:py-24 bg-background">
+      <section id="study-goal" className="py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -170,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-background">
+      <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4">
           <div className="relative isolate overflow-hidden bg-accent/90 px-6 py-24 text-center shadow-2xl rounded-2xl sm:px-16">
             <h2 className="font-headline mx-auto max-w-2xl text-3xl font-bold tracking-tight text-accent-foreground sm:text-4xl">

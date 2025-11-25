@@ -35,12 +35,12 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       {/* Page Header */}
-      <header className="bg-primary/10 py-16 sm:py-24">
-        <div className="container mx-auto px-4 text-center">
+      <header className="py-16 sm:py-24">
+        <div className="container mx-auto px-4">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             About UniFriend
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Empowering students everywhere to find their perfect university.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       </section>
 
       {/* Data Collection Section */}
-       <section className="py-16 sm:py-24 bg-primary/10">
+       <section className="py-16 sm:py-24 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <Database className="mx-auto h-12 w-12 text-accent" />

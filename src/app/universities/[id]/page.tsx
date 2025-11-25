@@ -67,8 +67,8 @@ export default function UniversityDetailPage({
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-        <div className="absolute bottom-0 left-0 right-0 text-white">
-          <div className="container mx-auto px-4 py-8">
+        <div className="absolute bottom-0 left-0 right-0 text-white p-4 sm:p-8">
+          <div className="container mx-auto">
             <div className="flex flex-col md:flex-row items-start gap-4">
                <div className="relative h-24 w-24 md:h-32 md:w-32 rounded-lg overflow-hidden border-4 border-background bg-background shadow-lg -mt-16 md:-mt-24 shrink-0">
                 <Image
@@ -83,14 +83,14 @@ export default function UniversityDetailPage({
                 <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight">
                   {university.name}
                 </h1>
-                <div className="flex items-center text-lg mt-2 space-x-4">
+                <div className="flex flex-wrap items-center text-md md:text-lg mt-2 gap-x-4 gap-y-1">
                   <span className="flex items-center"><MapPin className="h-5 w-5 mr-2" /> {university.location.city}, {university.location.country}</span>
                   <a href={university.website} target="_blank" rel="noopener noreferrer" className="flex items-center hover:underline">
                     <Globe className="h-5 w-5 mr-2" /> Visit Website
                   </a>
                 </div>
               </div>
-              <div className="mt-4 md:mt-0 w-full md:w-auto shrink-0">
+              <div className="mt-4 md:mt-0 w-full md:w-auto shrink-0 self-end md:self-center">
                 <AddToCompareButton universityId={university.id} />
               </div>
             </div>

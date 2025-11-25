@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { ComparisonProvider } from '@/context/ComparisonProvider';
+import { AppShell } from '@/components/layout/AppShell';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -37,11 +36,9 @@ export default function RootLayout({
         )}
       >
         <ComparisonProvider>
-          <div className="relative flex min-h-dvh flex-col bg-background">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+            <AppShell>
+                {children}
+            </AppShell>
           <Toaster />
         </ComparisonProvider>
       </body>
