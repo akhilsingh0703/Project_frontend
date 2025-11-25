@@ -21,9 +21,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const topColleges = getUniversities().slice(0, 3);
+  const heroImage = PlaceHolderImages.find((img) => img.id === 'stanford-banner');
   
   const studyGoals = [
     {
@@ -50,47 +53,94 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-background">
+      {/* Hero Section */}
+      <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-center text-white">
+        {heroImage && (
+            <Image
+            src={heroImage.imageUrl}
+            alt={heroImage.description}
+            fill
+            className="object-cover"
+            data-ai-hint={heroImage.imageHint}
+            />
+        )}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold">
+            Discover. Decide. Succeed — with UniFriend.
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-white/90">
+            UniFriend helps students become Engineers, Doctors, and Business Leaders — without financial barriers.
+          </p>
+          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
+            <Link href="#search-section">Find Your University</Link>
+          </Button>
+        </div>
+      </section>
+
       {/* Search Section */}
-      <section className="py-12 bg-primary/10">
+      <section id="search-section" className="-mt-32 relative z-20 pb-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">Find your perfect university</CardTitle>
+          <div className="max-w-5xl mx-auto">
+            <Card className="shadow-2xl">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-semibold">Find your perfect university</CardTitle>
               </CardHeader>
               <CardContent className="p-4 sm:p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
-                  <div className="lg:col-span-2 relative">
-                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input
-                      type="text"
-                      placeholder="Search universities, courses, or exams..."
-                      className="h-12 text-base pl-10"
-                    />
-                  </div>
-                  <Select>
-                    <SelectTrigger className="h-12 text-base">
-                      <SelectValue placeholder="State" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="ny">New York</SelectItem>
-                      <SelectItem value="ca">California</SelectItem>
-                      <SelectItem value="tx">Texas</SelectItem>
-                    </SelectContent>
-                  </Select>
-                   <Select>
-                    <SelectTrigger className="h-12 text-base">
-                      <SelectValue placeholder="Course Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="full-time">Full-time</SelectItem>
-                      <SelectItem value="part-time">Part-time</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full h-12">
-                    <Filter className="mr-2 h-5 w-5" />
-                    Filter
-                  </Button>
+                <div className="space-y-4">
+                    <div className="relative">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                        <Input
+                        type="text"
+                        placeholder="Search universities, courses, or exams..."
+                        className="h-12 text-base pl-10"
+                        />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+                        <Select>
+                            <SelectTrigger className="h-12 text-base">
+                            <SelectValue placeholder="State" />
+                            </SelectTrigger>
+                            <SelectContent>
+                            <SelectItem value="ny">New York</SelectItem>
+                            <SelectItem value="ca">California</SelectItem>
+                            <SelectItem value="tx">Texas</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Select>
+                            <SelectTrigger className="h-12 text-base">
+                            <SelectValue placeholder="Course Type" />
+                            </SelectTrigger>
+                            <SelectContent>
+                            <SelectItem value="full-time">Full-time</SelectItem>
+                            <SelectItem value="part-time">Part-time</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Select>
+                            <SelectTrigger className="h-12 text-base">
+                            <SelectValue placeholder="Stream" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="engineering">Engineering</SelectItem>
+                                <SelectItem value="management">Management</SelectItem>
+                                <SelectItem value="commerce">Commerce</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Select>
+                            <SelectTrigger className="h-12 text-base">
+                            <SelectValue placeholder="Fee Range" />
+                            </SelectTrigger>
+                             <SelectContent>
+                                <SelectItem value="low">Less than ₹1,00,000</SelectItem>
+                                <SelectItem value="medium">₹1,00,000 - ₹3,00,000</SelectItem>
+                                <SelectItem value="high">More than ₹3,00,000</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-full h-12">
+                            <Filter className="mr-2 h-5 w-5" />
+                            Filter
+                        </Button>
+                    </div>
                 </div>
               </CardContent>
             </Card>
@@ -99,7 +149,7 @@ export default function Home() {
       </section>
       
       {/* Select Your Study Goal Section */}
-      <section id="study-goal" className="py-16 sm:py-24">
+      <section id="study-goal" className="py-16 sm:py-24 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

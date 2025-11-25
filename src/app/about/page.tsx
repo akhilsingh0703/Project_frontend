@@ -35,19 +35,57 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       {/* Page Header */}
-      <header className="py-16 sm:py-24">
+      <header className="py-16 sm:py-24 bg-muted/20">
         <div className="container mx-auto px-4">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            About UniFriend
+            Contact Us
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Empowering students everywhere to find their perfect university.
+            We&apos;d love to hear from you.
           </p>
         </div>
       </header>
 
-      {/* Mission Section */}
+      {/* Contact & FAQ Section */}
       <section className="py-16 sm:py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-5 gap-12">
+            <div className="lg:col-span-2">
+              <h2 className="font-headline text-3xl font-bold">
+                Get in Touch
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                Have questions or feedback? Fill out the form below.
+              </p>
+              <Card className="mt-8">
+                <CardContent className="p-6">
+                  <ContactForm />
+                </CardContent>
+              </Card>
+            </div>
+            <div className="lg:col-span-3">
+              <h2 className="font-headline text-3xl font-bold">
+                Frequently Asked Questions
+              </h2>
+              <Accordion type="single" collapsible className="w-full mt-6">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="font-semibold text-left">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Mission Section */}
+      <section className="py-16 sm:py-24 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="prose prose-lg max-w-none text-foreground/90">
@@ -88,83 +126,6 @@ export default function AboutPage() {
                 />
               </div>
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Data Collection Section */}
-       <section className="py-16 sm:py-24 bg-muted/40">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <Database className="mx-auto h-12 w-12 text-accent" />
-            <h2 className="mt-4 font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              How We Collect Data
-            </h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-              Transparency and accuracy are at the core of our platform. We
-              gather information from a variety of trusted sources.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="flex flex-col items-center">
-              <h3 className="font-headline text-xl font-semibold">University APIs</h3>
-              <p className="mt-2 text-muted-foreground">
-                We connect directly to official university data streams to get
-                the most current information on programs and admissions.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <h3 className="font-headline text-xl font-semibold">Government Sources</h3>
-              <p className="mt-2 text-muted-foreground">
-                Data on accreditation, tuition trends, and graduation rates
-                is often sourced from national educational databases.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <h3 className="font-headline text-xl font-semibold">Manual Verification</h3>
-              <p className="mt-2 text-muted-foreground">
-                Our dedicated team regularly reviews and verifies data points
-                to ensure accuracy and fill in any gaps.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact & FAQ Section */}
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-5 gap-12">
-            <div className="lg:col-span-2">
-              <h2 className="font-headline text-3xl font-bold">
-                Get in Touch
-              </h2>
-              <p className="mt-2 text-muted-foreground">
-                Have questions or feedback? We&apos;d love to hear from you.
-              </p>
-              <Card className="mt-8">
-                <CardContent className="p-6">
-                  <ContactForm />
-                </CardContent>
-              </Card>
-            </div>
-            <div className="lg:col-span-3">
-              <h2 className="font-headline text-3xl font-bold">
-                Frequently Asked Questions
-              </h2>
-              <Accordion type="single" collapsible className="w-full mt-6">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="font-semibold text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
           </div>
         </div>
       </section>
