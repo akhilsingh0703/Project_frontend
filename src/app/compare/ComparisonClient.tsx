@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useComparison } from '@/hooks/use-comparison';
 import { getUniversityById } from '@/lib/data';
 import type { University } from '@/lib/types';
@@ -41,9 +42,17 @@ import { Separator } from '@/components/ui/separator';
 
 export function ComparisonClient() {
   const { comparisonList, removeFromCompare } = useComparison();
-  const universities = comparisonList
-    .map((id) => getUniversityById(id))
-    .filter((uni): uni is University => uni !== undefined);
+  const [universities, setUniversities] = useState<University[]>([]);
+
+  useEffect(() => {
+    const fetchUniversities = async () => {
+      const universityPromises = comparisonList.map((id) => getUniversityById(id));
+      const resolvedUniversities = await Promise.all(universityPromises);
+      setUniversities(resolvedUniversities.filter((uni): uni is University => uni !== undefined));
+    };
+
+    fetchUniversities();
+  }, [comparisonList]);
 
   if (universities.length === 0) {
     return (

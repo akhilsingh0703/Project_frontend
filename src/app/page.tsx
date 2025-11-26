@@ -22,34 +22,37 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+const PlaceHolderImages = require('@/lib/placeholder-images.json');
 
-export default function Home() {
-  const topColleges = getUniversities().slice(0, 3);
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'stanford-banner');
+export default async function Home() {
+  const universities = await getUniversities();
+  const topColleges = universities.slice(0, 3);
+  const heroImage = PlaceHolderImages.placeholderImages.find((img: any) => img.id === 'stanford-banner');
   
   const studyGoals = [
     {
       title: 'Engineering',
       courses: ['BE/B.Tech', 'Diploma in Engineering', 'ME/M.Tech'],
-      count: 230
     },
     {
       title: 'Management',
       courses: ['MBA/PGDM', 'BBA/BMS', 'Executive MBA'],
-      count: 180
     },
     {
       title: 'Commerce',
       courses: ['B.Com', 'M.Com'],
-      count: 150
     },
     {
       title: 'Arts',
       courses: ['BA', 'MA', 'BFA', 'BSW'],
-      count: 120
     }
   ];
+
+  const getStreamCount = (stream: string) => {
+    return universities.filter(uni => 
+      uni.programs.some(program => program.department === stream)
+    ).length;
+  };
 
   return (
     <div className="flex flex-col bg-background">
@@ -161,10 +164,16 @@ export default function Home() {
               <Card key={goal.title} className="p-6 transition-shadow hover:shadow-lg">
                 <div className="flex justify-between items-start">
                   <h3 className="font-headline text-xl font-bold">{goal.title}</h3>
-                  <span className="text-xs font-semibold text-muted-foreground bg-secondary px-2 py-1 rounded-full">{goal.count}</span>
+                  <span className="text-xs font-semibold text-muted-foreground bg-secondary px-2 py-1 rounded-full">{getStreamCount(goal.title)}</span>
                 </div>
                 <div className="mt-4 space-y-2 text-muted-foreground">
-                  {goal.courses.map(course => <p key={course}>{course}</p>)}
+                  {goal.courses.map(course => (
+                    <p key={course}>
+                      <Link href={`/universities?course=${encodeURIComponent(course)}`} className="hover:text-accent hover:underline">
+                        {course}
+                      </Link>
+                    </p>
+                  ))}
                 </div>
               </Card>
             ))}

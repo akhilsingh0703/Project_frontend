@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import type { University } from '@/lib/types';
 import {
   Select,
@@ -19,21 +19,52 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 interface UniversityListProps {
   allUniversities: University[];
 }
 
 export function UniversityList({ allUniversities }: UniversityListProps) {
+  const searchParams = useSearchParams();
+  const courseQuery = searchParams.get('course');
+
   const [filters, setFilters] = useState({
     state: 'all',
     courseType: 'all',
     stream: 'all',
     feeRange: 'all',
+    course: courseQuery || 'all',
   });
 
-  // Note: Filtering logic is not fully implemented based on the new UI.
-  const filteredUniversities: University[] = [];
+  useEffect(() => {
+    if (courseQuery) {
+      setFilters(prevFilters => ({ ...prevFilters, course: courseQuery }));
+    }
+  }, [courseQuery]);
+
+  const filteredUniversities = useMemo(() => {
+    return allUniversities.filter(uni => {
+      const stateMatch = filters.state === 'all' || uni.location.state === filters.state;
+      const typeMatch = filters.courseType === 'all' || uni.type === filters.courseType;
+      const streamMatch = filters.stream === 'all' || uni.programs.some(p => p.stream === filters.stream);
+      const courseMatch = filters.course === 'all' || uni.programs.some(p => p.name === filters.course);
+
+      // A simple fee range check, assuming tuition is a number.
+      const feeMatch = filters.feeRange === 'all' || 
+        (filters.feeRange === 'low' && uni.tuition.undergraduate < 100000) ||
+        (filters.feeRange === 'medium' && uni.tuition.undergraduate >= 100000 && uni.tuition.undergraduate <= 300000) ||
+        (filters.feeRange === 'high' && uni.tuition.undergraduate > 300000);
+
+      return stateMatch && typeMatch && streamMatch && feeMatch && courseMatch;
+    });
+  }, [allUniversities, filters]);
+
+  // Get unique values for filters
+  const states = ['all', ...Array.from(new Set(allUniversities.map(u => u.location.state)))];
+  const streams = ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.stream))))];
+
 
   return (
     <div className="mt-6">
@@ -46,23 +77,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="State" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All States</SelectItem>
-            <SelectItem value="ny">New York</SelectItem>
-            <SelectItem value="ca">California</SelectItem>
-            <SelectItem value="tx">Texas</SelectItem>
-          </SelectContent>
-        </Select>
-        <Select
-          value={filters.courseType}
-          onValueChange={(value) => setFilters({ ...filters, courseType: value })}
-        >
-          <SelectTrigger className="w-full sm:w-[180px]">
-            <SelectValue placeholder="Course Type" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Types</SelectItem>
-            <SelectItem value="full-time">Full-time</SelectItem>
-            <SelectItem value="part-time">Part-time</SelectItem>
+            {states.map(s => <SelectItem key={s} value={s}>{s === 'all' ? 'All States' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -73,10 +88,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="Stream" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Streams</SelectItem>
-            <SelectItem value="engineering">Engineering</SelectItem>
-            <SelectItem value="management">Management</SelectItem>
-            <SelectItem value="commerce">Commerce</SelectItem>
+             {streams.map(s => <SelectItem key={s} value={s}>{s === 'all' ? 'All Streams' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -88,9 +100,9 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All Ranges</SelectItem>
-            <SelectItem value="low">Less than $20,000</SelectItem>
-            <SelectItem value="medium">$20,000 - $50,000</SelectItem>
-            <SelectItem value="high">More than $50,000</SelectItem>
+            <SelectItem value="low">Less than ₹1,00,000</SelectItem>
+            <SelectItem value="medium">₹1,00,000 - ₹3,00,000</SelectItem>
+            <SelectItem value="high">More than ₹3,00,000</SelectItem>
           </SelectContent>
         </Select>
         <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -103,34 +115,30 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">
-                <input type="checkbox" />
-              </TableHead>
               <TableHead>University</TableHead>
               <TableHead>State</TableHead>
-              <TableHead>Course Type</TableHead>
-              <TableHead>Stream</TableHead>
-              <TableHead>Fee Range</TableHead>
+              <TableHead>City</TableHead>
+              <TableHead>Fee (UG)</TableHead>
+              <TableHead>Compare</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {filteredUniversities.length > 0 ? (
               filteredUniversities.map((uni) => (
                 <TableRow key={uni.id}>
-                  <TableCell>
+                  <TableCell className='font-medium'><Link href={`/universities/${uni.id}`}>{uni.name}</Link></TableCell>
+                  <TableCell>{uni.location.state}</TableCell>
+                  <TableCell>{uni.location.city}</TableCell>
+                  <TableCell>₹{uni.tuition.undergraduate.toLocaleString()}</TableCell>
+                   <TableCell>
                     <input type="checkbox" />
                   </TableCell>
-                  <TableCell>{uni.name}</TableCell>
-                  <TableCell>{uni.location.city}</TableCell>
-                  <TableCell>{uni.type}</TableCell>
-                  <TableCell>{uni.popularPrograms[0]}</TableCell>
-                  <TableCell>${uni.tuition.undergraduate}</TableCell>
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={6} className="h-24 text-center">
-                  No universities found.
+                <TableCell colSpan={5} className="h-24 text-center">
+                  No universities found for the selected criteria.
                 </TableCell>
               </TableRow>
             )}

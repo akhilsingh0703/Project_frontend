@@ -28,12 +28,12 @@ import { Summary } from './Summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CoursesAndFees } from './CoursesAndFees';
 
-export default function UniversityDetailPage({
+export default async function UniversityDetailPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const university = getUniversityById(params.id);
+  const university = await getUniversityById(params.id);
 
   if (!university) {
     notFound();
