@@ -21,6 +21,14 @@ export type University = {
     gpa?: string;
     satRange?: string;
     actRange?: string;
+    acceptanceRate: number;
+    studentFacultyRatio: string;
+    graduationRate: number;
+  };
+  tuition: {
+    undergraduate: number;
+    graduate: number;
+    roomAndBoard: number;
   };
   programs: Program[];
   courses: Course[];
@@ -60,5 +68,3 @@ export type Course = {
   cutoffRank: string;
   cutoffExam: string;
 };
-
-    

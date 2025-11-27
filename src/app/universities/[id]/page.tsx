@@ -50,11 +50,9 @@ export default async function UniversityDetailPage({
   const logoImage = PlaceHolderImages.find(img => img.id === 'university-logo');
 
   const quickFacts = [
-    { label: 'Acceptance Rate', value: `${university.quickFacts.acceptanceRate}%`, icon: Percent },
     { label: 'GPA', value: university.quickFacts.gpa || 'N/A', icon: GraduationCap },
     { label: 'SAT Range', value: university.quickFacts.satRange || 'N/A', icon: ClipboardCheck },
-    { label: 'Student-Faculty Ratio', value: university.quickFacts.studentFacultyRatio, icon: Scale },
-    { label: 'Graduation Rate', value: `${university.quickFacts.graduationRate}%`, icon: GraduationCap },
+    { label: 'ACT Range', value: university.quickFacts.actRange || 'N/A', icon: ClipboardCheck },
     { label: 'Student Population', value: university.studentPopulation.toLocaleString(), icon: Users },
   ];
 
@@ -176,28 +174,14 @@ export default async function UniversityDetailPage({
                     </CardContent>
                     </Card>
 
-                    {/* Tuition & Aid */}
+                    {/* Financial Aid */}
                     <Card>
                     <CardHeader>
-                        <CardTitle className="font-headline text-2xl flex items-center"><DollarSign className="mr-3 text-accent"/>Tuition & Financial Aid</CardTitle>
+                        <CardTitle className="font-headline text-2xl flex items-center"><Landmark className="mr-3 text-accent"/>Financial Aid</CardTitle>
                     </CardHeader>
-                    <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        <div className="p-4 border rounded-lg">
-                            <p className="text-sm text-muted-foreground">Undergraduate</p>
-                            <p className="text-2xl font-bold font-headline">₹{university.tuition.undergraduate.toLocaleString('en-IN')}</p>
-                        </div>
-                        <div className="p-4 border rounded-lg">
-                            <p className="text-sm text-muted-foreground">Graduate</p>
-                            <p className="text-2xl font-bold font-headline">₹{university.tuition.graduate.toLocaleString('en-IN')}</p>
-                        </div>
-                        <div className="p-4 border rounded-lg">
-                            <p className="text-sm text-muted-foreground">Room & Board</p>
-                            <p className="text-2xl font-bold font-headline">₹{university.tuition.roomAndBoard.toLocaleString('en-IN')}</p>
-                        </div>
-                        <div className="md:col-span-3">
-                            <h4 className="font-semibold flex items-center justify-center"><Landmark className="mr-2"/>Financial Aid</h4>
-                            <p className="text-muted-foreground mt-2 text-sm">{university.financialAid.details}</p>
-                        </div>
+                    <CardContent>
+                        <h4 className="font-semibold">Scholarships</h4>
+                        <p className="text-muted-foreground mt-2 text-sm">{university.financialAid.details}</p>
                     </CardContent>
                     </Card>
 

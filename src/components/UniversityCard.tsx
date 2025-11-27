@@ -1,5 +1,6 @@
 
 
+
       
 import Image from 'next/image';
 import Link from 'next/link';
@@ -30,6 +31,8 @@ export function UniversityCard({ university }: UniversityCardProps) {
     description: `${university.name} logo`,
   };
 
+  const undergraduateTuition = university.tuition?.undergraduate;
+
   return (
     <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <CardHeader className="p-0">
@@ -37,7 +40,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
           <div className="relative h-48 w-full">
             {bannerImage && (
               <Image
-                src={bannerImage.imageUrl}
+                src={university.images.banner || bannerImage.imageUrl}
                 alt={bannerImage.description}
                 fill
                 className="object-cover"
@@ -49,7 +52,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
               <div className="relative h-16 w-16 rounded-lg overflow-hidden border-2 border-background bg-background shadow-md">
                 {logoImage && (
                   <Image
-                    src={logoImage.imageUrl}
+                    src={university.images.logo || logoImage.imageUrl}
                     alt={logoImage.description}
                     fill
                     className="object-contain p-1"
@@ -102,7 +105,9 @@ export function UniversityCard({ university }: UniversityCardProps) {
             <div className="flex items-center">
                 <Users className="h-4 w-4 mr-2 text-accent" />
                 <div>
-                    <p className="font-semibold">₹{(university.tuition.undergraduate / 1000).toFixed(0)}k</p>
+                    <p className="font-semibold">
+                      {undergraduateTuition ? `₹${(undergraduateTuition / 1000).toFixed(0)}k` : 'N/A'}
+                    </p>
                     <p className="text-xs text-muted-foreground">Tuition (UG)</p>
                 </div>
             </div>

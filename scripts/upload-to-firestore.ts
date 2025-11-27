@@ -1,7 +1,7 @@
 
 import { db } from '../src/lib/firebase';
 import { universityData } from '../src/lib/universityData';
-import { collection, addDoc, writeBatch, getDocs, query } from 'firebase/firestore';
+import { collection, writeBatch, getDocs, query, doc } from 'firebase/firestore';
 
 const uploadUniversities = async () => {
   const universitiesCollection = collection(db, 'universities');
@@ -17,10 +17,9 @@ const uploadUniversities = async () => {
   const batch = writeBatch(db);
 
   universityData.forEach((university) => {
-    // Firestore will auto-generate an ID for each new document
-    const docRef = collection(db, 'universities');
-    // We can't use addDoc in a batch, so we create a new doc ref and set it.
-    batch.set(docRef.doc(), university);
+    // Create a new document reference with an auto-generated ID
+    const newDocRef = doc(universitiesCollection);
+    batch.set(newDocRef, university);
   });
   
   try {
@@ -35,4 +34,5 @@ const uploadUniversities = async () => {
 
 uploadUniversities().catch(error => {
   console.error("An unhandled error occurred during the upload process:", error);
+  process.exit(1);
 });

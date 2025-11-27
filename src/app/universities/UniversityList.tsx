@@ -38,26 +38,36 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
 
   const filteredUniversities = useMemo(() => {
     return allUniversities.filter(uni => {
+      // Data integrity check
+      if (!uni || !uni.location || typeof uni.location.state === 'undefined') {
+        console.warn('Skipping university with malformed data:', uni);
+        return false;
+      }
+        
       const stateMatch = filters.state === 'all' || uni.location.state === filters.state;
       const typeMatch = filters.type === 'all' || uni.type === filters.type;
-      const streamMatch = filters.stream === 'all' || uni.programs.some(p => p.department === filters.stream);
+      const streamMatch = filters.stream === 'all' || (uni.programs && uni.programs.some(p => p.department === filters.stream));
 
       // A simple fee range check, assuming tuition is a number.
       const feeMatch = filters.feeRange === 'all' || 
-        (filters.feeRange === 'low' && uni.tuition.undergraduate < 100000) ||
-        (filters.feeRange === 'medium' && uni.tuition.undergraduate >= 100000 && uni.tuition.undergraduate <= 300000) ||
-        (filters.feeRange === 'high' && uni.tuition.undergraduate > 300000);
+        (uni.tuition && typeof uni.tuition.undergraduate !== 'undefined' && (
+          (filters.feeRange === 'low' && uni.tuition.undergraduate < 100000) ||
+          (filters.feeRange === 'medium' && uni.tuition.undergraduate >= 100000 && uni.tuition.undergraduate <= 300000) ||
+          (filters.feeRange === 'high' && uni.tuition.undergraduate > 300000)
+        ));
         
-      const courseMatch = filters.course === 'all' || uni.programs.some(p => p.name === filters.course) || uni.courses.some(c => c.name === filters.course);
+      const courseMatch = filters.course === 'all' || 
+        (uni.programs && uni.programs.some(p => p.name === filters.course)) || 
+        (uni.courses && uni.courses.some(c => c.name === filters.course));
 
       return stateMatch && typeMatch && streamMatch && feeMatch && courseMatch;
     });
   }, [allUniversities, filters]);
 
   // Get unique values for filters
-  const states = useMemo(() => ['all', ...Array.from(new Set(allUniversities.map(u => u.location.state)))], [allUniversities]);
-  const types = useMemo(() => ['all', ...Array.from(new Set(allUniversities.map(u => u.type)))], [allUniversities]);
-  const streams = useMemo(() => ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.department))))], [allUniversities]);
+  const states = useMemo(() => ['all', ...Array.from(new Set(allUniversities.filter(u => u?.location?.state).map(u => u.location.state)))], [allUniversities]);
+  const types = useMemo(() => ['all', ...Array.from(new Set(allUniversities.filter(u => u?.type).map(u => u.type)))], [allUniversities]);
+  const streams = useMemo(() => ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs?.map(p => p.department) || [])))], [allUniversities]);
   const listId = useId();
 
   return (

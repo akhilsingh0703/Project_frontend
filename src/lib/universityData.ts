@@ -1,6 +1,5 @@
 
-      
-import { University } from './types';
+import type { University } from './types';
 
 export const universityData: Omit<University, 'id'>[] = [
   {
@@ -39,9 +38,14 @@ export const universityData: Omit<University, 'id'>[] = [
     setting: 'Urban',
     studentPopulation: 132435,
     quickFacts: {
-        acceptanceRate: 98,
+        acceptanceRate: 67,
+        studentFacultyRatio: '21:1',
         graduationRate: 85,
-        studentFacultyRatio: '16:1',
+    },
+    tuition: {
+        undergraduate: 15000,
+        graduate: 20000,
+        roomAndBoard: 75000,
     },
     courses: [
       {
@@ -78,11 +82,6 @@ export const universityData: Omit<University, 'id'>[] = [
         cutoffExam: 'DUET PG',
       },
     ],
-    tuition: {
-        undergraduate: 15000,
-        graduate: 12000,
-        roomAndBoard: 75000,
-    },
     financialAid: {
       scholarshipsAvailable: true,
       details: 'Merit-based and need-based scholarships are available.',
@@ -140,8 +139,13 @@ export const universityData: Omit<University, 'id'>[] = [
     quickFacts: {
       satRange: '1450-1570',
       acceptanceRate: 17,
+      studentFacultyRatio: '13:1',
       graduationRate: 95,
-      studentFacultyRatio: '10:1',
+    },
+    tuition: {
+        undergraduate: 225000,
+        graduate: 180000,
+        roomAndBoard: 90000,
     },
     courses: [
       {
@@ -167,11 +171,6 @@ export const universityData: Omit<University, 'id'>[] = [
         cutoffExam: 'GATE',
       },
     ],
-    tuition: {
-        undergraduate: 225000,
-        graduate: 180000,
-        roomAndBoard: 90000,
-    },
     financialAid: {
       scholarshipsAvailable: true,
       details:
@@ -197,7 +196,7 @@ export const universityData: Omit<University, 'id'>[] = [
     ],
   },
   {
-    name: 'Centurion University of Technology and Management, Bhubaneswar',
+    name: 'Centurion University of Technology and Management',
     location: {
       city: 'Bhubaneswar',
       state: 'Odisha',
@@ -218,14 +217,14 @@ export const universityData: Omit<University, 'id'>[] = [
       gpa: '3.5',
       satRange: '1200-1400',
       actRange: '24-30',
-      studentFacultyRatio: '15:1',
       acceptanceRate: 72.5,
+      studentFacultyRatio: '15:1',
       graduationRate: 89.3,
     },
     programs: [
       {
         name: 'B.E. / B.Tech',
-        department: 'School of Engineering',
+        department: 'Engineering',
         duration: '4 years',
       },
       {
@@ -247,11 +246,6 @@ export const universityData: Omit<University, 'id'>[] = [
         cutoffExam: 'CUEE',
       },
     ],
-    tuition: {
-      undergraduate: 150000.0,
-      graduate: 200000.0,
-      roomAndBoard: 80000.0,
-    },
     financialAid: {
       scholarshipsAvailable: true,
       details: 'Various state and national level scholarships are accepted.',
@@ -263,6 +257,11 @@ export const universityData: Omit<University, 'id'>[] = [
       ],
       applicationFee: 600,
       internationalRequirements: 'As per university norms',
+    },
+    tuition: {
+        undergraduate: 150000.0,
+        graduate: 200000.0,
+        roomAndBoard: 80000.0
     },
     map: {
         address: 'Ramchandrapur, Jatni, Bhubaneswar, Odisha 752050, India',
