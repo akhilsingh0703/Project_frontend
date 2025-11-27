@@ -11,17 +11,8 @@ import {
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { SlidersHorizontal } from 'lucide-react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import { AddToCompareButton } from '@/components/AddToCompareButton';
+import { UniversityCard } from '@/components/UniversityCard';
 
 interface UniversityListProps {
   allUniversities: University[];
@@ -67,6 +58,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
   const states = useMemo(() => ['all', ...Array.from(new Set(allUniversities.map(u => u.location.state)))], [allUniversities]);
   const types = useMemo(() => ['all', ...Array.from(new Set(allUniversities.map(u => u.type)))], [allUniversities]);
   const streams = useMemo(() => ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.department))))], [allUniversities]);
+  const listId = useId();
 
   return (
     <div className="mt-6">
@@ -79,7 +71,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="State" />
           </SelectTrigger>
           <SelectContent>
-            {states.map((s, i) => <SelectItem key={`${s}-${i}`} value={s}>{s === 'all' ? 'All States' : s}</SelectItem>)}
+            {states.map((s, i) => <SelectItem key={`${listId}-state-${s}-${i}`} value={s}>{s === 'all' ? 'All States' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -90,7 +82,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="University Type" />
           </SelectTrigger>
           <SelectContent>
-            {types.map((t, i) => <SelectItem key={`${t}-${i}`} value={t}>{t === 'all' ? 'All Types' : t}</SelectItem>)}
+            {types.map((t, i) => <SelectItem key={`${listId}-type-${t}-${i}`} value={t}>{t === 'all' ? 'All Types' : t}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -101,7 +93,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="Stream" />
           </SelectTrigger>
           <SelectContent>
-             {streams.map((s, i) => <SelectItem key={`${s}-${i}`} value={s}>{s === 'all' ? 'All Streams' : s}</SelectItem>)}
+             {streams.map((s, i) => <SelectItem key={`${listId}-stream-${s}-${i}`} value={s}>{s === 'all' ? 'All Streams' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -124,41 +116,16 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
         </Button>
       </div>
 
-      <div className="border rounded-lg">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>University</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>State</TableHead>
-              <TableHead>City</TableHead>
-              <TableHead>Fee (UG)</TableHead>
-              <TableHead>Compare</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredUniversities.length > 0 ? (
-              filteredUniversities.map((uni) => (
-                <TableRow key={uni.id}>
-                  <TableCell className='font-medium'><Link href={`/universities/${uni.id}`}>{uni.name}</Link></TableCell>
-                  <TableCell>{uni.type}</TableCell>
-                  <TableCell>{uni.location.state}</TableCell>
-                  <TableCell>{uni.location.city}</TableCell>
-                  <TableCell>₹{uni.tuition.undergraduate.toLocaleString()}</TableCell>
-                   <TableCell>
-                    <AddToCompareButton universityId={uni.id} />
-                  </TableCell>
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell colSpan={6} className="h-24 text-center">
-                  No universities found for the selected criteria.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredUniversities.length > 0 ? (
+          filteredUniversities.map((uni) => (
+            <UniversityCard key={uni.id} university={uni} />
+          ))
+        ) : (
+          <div className="col-span-full text-center py-12">
+            <p>No universities found for the selected criteria.</p>
+          </div>
+        )}
       </div>
     </div>
   );
