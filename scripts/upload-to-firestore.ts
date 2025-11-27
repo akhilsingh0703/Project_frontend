@@ -1,25 +1,38 @@
 
 import { db } from '../src/lib/firebase';
 import { universityData } from '../src/lib/universityData';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, writeBatch, getDocs, query } from 'firebase/firestore';
 
 const uploadUniversities = async () => {
   const universitiesCollection = collection(db, 'universities');
+  
+  // Optional: Check if data already exists to avoid duplicates
+  const existingData = await getDocs(query(universitiesCollection));
+  if (!existingData.empty) {
+    console.log('Universities collection is not empty. Skipping upload to prevent duplicates.');
+    return;
+  }
+  
   console.log('Starting university data upload...');
+  const batch = writeBatch(db);
 
-  for (const university of universityData) {
-    try {
-      const docRef = await addDoc(universitiesCollection, university);
-      console.log(`Successfully uploaded: ${university.name} with id ${docRef.id}`);
-    } catch (error) {
-      console.error(`Error uploading ${university.name}:`, error);
-    }
+  universityData.forEach((university) => {
+    // Firestore will auto-generate an ID for each new document
+    const docRef = collection(db, 'universities');
+    // We can't use addDoc in a batch, so we create a new doc ref and set it.
+    batch.set(docRef.doc(), university);
+  });
+  
+  try {
+    await batch.commit();
+    console.log(`Successfully uploaded ${universityData.length} universities in a single batch.`);
+  } catch (error) {
+    console.error(`Error uploading universities:`, error);
   }
 
   console.log('University data upload finished.');
-  // In a client-side script context, we can't just exit the process.
-  // This will run in a context where we can assume it completes.
 };
 
-// We will assume this script is run in an environment that can execute it.
-uploadUniversities();
+uploadUniversities().catch(error => {
+  console.error("An unhandled error occurred during the upload process:", error);
+});
