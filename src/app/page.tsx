@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -22,12 +23,12 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import Image from 'next/image';
-const PlaceHolderImages = require('@/lib/placeholder-images.json');
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default async function Home() {
   const universities = await getUniversities();
   const topColleges = universities.slice(0, 3);
-  const heroImage = PlaceHolderImages.placeholderImages.find((img: any) => img.id === 'stanford-banner');
+  const heroImage = PlaceHolderImages.find((img: any) => img.id === 'stanford-banner');
   
   const studyGoals = [
     {

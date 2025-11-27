@@ -13,12 +13,12 @@ export const universityData: Omit<University, 'id'>[] = [
       'A premier university in India, known for its high standards in teaching and research and attracts eminent scholars to its faculty.',
     website: 'http://www.du.ac.in',
     images: {
-        logo: 'https://images.unsplash.com/photo-1646409203769-8a80f02c0ce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcmVzdCUyMGxvZ298ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-        banner: 'https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA1NDExNHww&ixlib=rb-4.1.0&q=80&w=1080',
+        logo: 'https://picsum.photos/seed/delhi_logo/200/200',
+        banner: 'https://picsum.photos/seed/delhi_banner/800/600',
         campus: [
-            "https://images.unsplash.com/photo-1646400592070-b337fbfe61f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx1bml2ZXJzaXR5JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-            "https://images.unsplash.com/photo-1670528148572-9270351b95bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-            "https://images.unsplash.com/photo-1544531585-f14f463149ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NjQwNDkxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+            "https://picsum.photos/seed/delhi_campus1/800/600",
+            "https://picsum.photos/seed/delhi_campus2/800/600",
+            "https://picsum.photos/seed/delhi_campus3/800/600"
         ],
     },
     programs: [
@@ -34,8 +34,8 @@ export const universityData: Omit<University, 'id'>[] = [
       },
     ],
     tuition: {
-      undergraduate: 20000,
-      graduate: 15000,
+      undergraduate: 200000,
+      graduate: 150000,
       roomAndBoard: 100000,
     },
     type: 'Public',
@@ -46,10 +46,8 @@ export const universityData: Omit<University, 'id'>[] = [
         acceptanceRate: 67,
         studentFacultyRatio: '16:1',
         graduationRate: 80,
-        satRange: '1200-1400',
-        gpa: '3.7'
     },
-    courses: [
+     courses: [
         { "category": "Undergraduate", "name": "B.A. (Hons) Economics", "rating": 4.5, "reviews": 150, "views": 2500, "fees": 15000, "applicationDate": "2024-06-15", "cutoffRank": "98%", "cutoffExam": "DUET" },
         { "category": "Undergraduate", "name": "B.Com (Hons)", "rating": 4.4, "reviews": 180, "views": 3200, "fees": 16000, "applicationDate": "2024-06-15", "cutoffRank": "99%", "cutoffExam": "DUET" },
         { "category": "Postgraduate", "name": "M.A. English", "rating": 4.6, "reviews": 120, "views": 1800, "fees": 12000, "applicationDate": "2024-07-10", "cutoffRank": "Entrance-based", "cutoffExam": "DUET PG" }
@@ -66,8 +64,8 @@ export const universityData: Omit<University, 'id'>[] = [
     },
     map: {
         address: "University of Delhi, Benito Juarez Marg, South Campus, South Moti Bagh, New Delhi, Delhi 110021, India",
-        lat: 28.5983,
-        lng: 77.1593,
+        lat: 28.6880,
+        lng: 77.2190,
     },
     notableAlumni: ["Amitabh Bachchan", "Aung San Suu Kyi", "Shah Rukh Khan"],
     popularPrograms: ["Economics", "Commerce", "Political Science"],
@@ -83,12 +81,12 @@ export const universityData: Omit<University, 'id'>[] = [
       'One of the top engineering colleges in India, IIT Bombay is renowned for its flagship programs in engineering and technology.',
     website: 'http://www.iitb.ac.in',
     images: {
-        logo: 'https://images.unsplash.com/photo-1634578197578-dd387521fea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2NDA4OTY5OHww&ixlib=rb-4.1.0&q=80&w=1080',
-        banner: 'https://images.unsplash.com/photo-1554793000-245d3a3c2a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA3OTAyMXww&ixlib=rb-4.1.0&q=80&w=1080',
+        logo: 'https://picsum.photos/seed/iitb_logo/200/200',
+        banner: 'https://picsum.photos/seed/iitb_banner/800/600',
         campus: [
-            "https://images.unsplash.com/photo-1650350856922-a8c11869485d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYW1wdXMlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-            "https://images.unsplash.com/photo-1733426509854-10931d84009a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3NjQwNDM2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-            "https://images.unsplash.com/photo-1590231204765-12b10cedb4fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MDQzNjE0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+            "https://picsum.photos/seed/iitb_campus1/800/600",
+            "https://picsum.photos/seed/iitb_campus2/800/600",
+            "https://picsum.photos/seed/iitb_campus3/800/600"
         ],
     },
     programs: [
@@ -116,13 +114,11 @@ export const universityData: Omit<University, 'id'>[] = [
         acceptanceRate: 10,
         studentFacultyRatio: '8:1',
         graduationRate: 95,
-        satRange: '1450-1570',
-        gpa: 'N/A'
+        satRange: '1450-1570'
     },
     courses: [
-        { "category": "Undergraduate", "name": "B.Tech in Computer Science", "rating": 4.8, "reviews": 250, "views": 5000, "fees": 225000, "applicationDate": "2024-05-20", "cutoffRank": "JEE Adv.", "cutoffExam": "JEE Advanced" },
-        { "category": "Undergraduate", "name": "B.Tech in Mechanical Engineering", "rating": 4.7, "reviews": 200, "views": 4500, "fees": 225000, "applicationDate": "2024-05-20", "cutoffRank": "JEE Adv.", "cutoffExam": "JEE Advanced" },
-        { "category": "Postgraduate", "name": "M.Tech in Electrical Engineering", "rating": 4.9, "reviews": 150, "views": 3000, "fees": 180000, "applicationDate": "2024-04-30", "cutoffRank": "GATE", "cutoffExam": "GATE" }
+        { "category": "Undergraduate", "name": "B.Tech. Computer Science", "rating": 4.9, "reviews": 400, "views": 8000, "fees": 225000, "applicationDate": "2024-03-15", "cutoffRank": "JEE Adv.", "cutoffExam": "JEE" },
+        { "category": "Postgraduate", "name": "M.Tech. in Mechanical Eng.", "rating": 4.8, "reviews": 150, "views": 4000, "fees": 180000, "applicationDate": "2024-04-10", "cutoffRank": "GATE", "cutoffExam": "GATE" }
     ],
     financialAid: {
         scholarshipsAvailable: true,
@@ -136,8 +132,8 @@ export const universityData: Omit<University, 'id'>[] = [
     },
     map: {
         address: "IIT Bombay, Powai, Mumbai, Maharashtra 400076, India",
-        lat: 19.133,
-        lng: 72.914,
+        lat: 19.1330,
+        lng: 72.9140,
     },
     notableAlumni: ["Nandan Nilekani", "Sundar Pichai", "Raghuram Rajan"],
     popularPrograms: ["Computer Science", "Mechanical Engineering", "Electrical Engineering"],
@@ -186,8 +182,6 @@ export const universityData: Omit<University, 'id'>[] = [
       acceptanceRate: 15,
       studentFacultyRatio: '7:1',
       graduationRate: 97,
-      satRange: 'N/A',
-      gpa: '3.9'
     },
     courses: [
         { "category": "Undergraduate", "name": "B.S. (Research)", "rating": 4.9, "reviews": 300, "views": 6000, "fees": 160000, "applicationDate": "2024-04-25", "cutoffRank": "JEE Main/Adv.", "cutoffExam": "JEE" },

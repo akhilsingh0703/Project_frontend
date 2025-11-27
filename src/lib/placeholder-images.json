@@ -3,253 +3,253 @@
     {
       "id": "stanford-logo",
       "description": "Stanford University Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1646500422414-5a8ad56e71b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bG9nbyUyMGNyZXN0fGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1646409205442-5a19be19745d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvJTIwY3Jlc3R8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "logo crest"
     },
     {
       "id": "stanford-banner",
       "description": "Stanford University Banner",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA1NDExNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDI2Mjg5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university campus"
     },
     {
       "id": "stanford-campus-1",
       "description": "Stanford campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1622604647545-0cada2f34470?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYW1wdXMlMjBidWlsZGluZ3N8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1763615834709-cd4b196980db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYW1wdXMlMjBidWlsZGluZ3N8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "campus buildings"
     },
     {
       "id": "stanford-campus-2",
       "description": "Stanford campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1709085783594-666111a690d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMGNhbXB1c3xlbnwwfHx8fDE3NjQwODkzODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1685539144681-5b1386d5fd9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3R1ZGVudHMlMjBjYW1wdXN8ZW58MHx8fHwxNzY0MTgxOTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "students campus"
     },
     {
       "id": "stanford-campus-3",
       "description": "Stanford campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1599933959041-19cbf8d470f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaWJyYXJ5JTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MDY3ODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1526243741027-444d633d7365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsaWJyYXJ5JTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MTk1NjUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "library interior"
     },
     {
       "id": "mit-logo",
       "description": "MIT Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1634578197578-dd387521fea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2NDA4OTY5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1761223956853-7c7c12ebff18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2NDIwNTkwMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern logo"
     },
     {
       "id": "mit-banner",
       "description": "MIT Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1554793000-245d3a3c2a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA3OTAyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1521713362244-1b5e5d150b29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MjA3MjQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern architecture"
     },
     {
       "id": "mit-campus-1",
       "description": "MIT campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1650350856922-a8c11869485d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYW1wdXMlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1706016899218-ebe36844f70e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYW1wdXMlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MTk5MTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "campus architecture"
     },
     {
       "id": "mit-campus-2",
       "description": "MIT campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1733426509854-10931d84009a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3NjQwNDM2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1759092912891-9f52486bb059?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdHVkZW50cyUyMGxhYnxlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "students lab"
     },
     {
       "id": "mit-campus-3",
       "description": "MIT campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1590231204765-12b10cedb4fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MDQzNjE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1605299670824-00515e81b924?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx1bml2ZXJzaXR5JTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university building"
     },
     {
       "id": "toronto-logo",
       "description": "University of Toronto Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1646409203769-8a80f02c0ce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcmVzdCUyMGxvZ298ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1646640034880-d1ccca55397a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3Jlc3QlMjBsb2dvfGVufDB8fHx8MTc2NDI2NTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "crest logo"
     },
     {
       "id": "toronto-banner",
       "description": "University of Toronto Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1726390415453-1b56f988700c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjbGFzc2ljJTIwY2FtcHVzfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1726390415698-3c60d6b16c02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbGFzc2ljJTIwY2FtcHVzfGVufDB8fHx8MTc2NDI2NTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "classic campus"
     },
     {
       "id": "toronto-campus-1",
       "description": "UofT campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1646400592070-b337fbfe61f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx1bml2ZXJzaXR5JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1646059526212-ac99cd873cbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDI2NTg0OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university architecture"
     },
     {
       "id": "toronto-campus-2",
       "description": "UofT campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1670528148572-9270351b95bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1610558751153-154582773d89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDI2NTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "city campus"
     },
     {
       "id": "toronto-campus-3",
       "description": "UofT campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1544531585-f14f463149ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NjQwNDkxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1519452575417-564c1401ecc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NjQxODEyOTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "lecture hall"
     },
     {
       "id": "oxford-logo",
       "description": "University of Oxford Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1760991885380-820b1e408f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoaXN0b3JpYyUyMGNyZXN0fGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1762974152618-d602195dec7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoaXN0b3JpYyUyMGNyZXN0fGVufDB8fHx8MTc2NDI2NTg0OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "historic crest"
     },
     {
       "id": "oxford-banner",
       "description": "University of Oxford Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1722076726490-e6345a1f4a63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoaXN0b3JpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjM5NzY4NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1664779938852-1c826fd563bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoaXN0b3JpYyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjQxNTM4NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "historic architecture"
     },
     {
       "id": "oxford-campus-1",
       "description": "Oxford campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2xsZWdlJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MDc1MjQ4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1641160616553-a9d21a846e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xsZWdlJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MTgxNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "college building"
     },
     {
       "id": "oxford-campus-2",
       "description": "Oxford campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1697373525667-629371d58795?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsaWJyYXJ5JTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MDY3ODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1568667256549-094345857637?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsaWJyYXJ5JTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MTk1NjUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "library interior"
     },
     {
       "id": "oxford-campus-3",
       "description": "Oxford campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1715372389153-7bed24e232da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3VydHlhcmQlMjBnYXJkZW58ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1615478397266-d94a8f153a8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3VydHlhcmQlMjBnYXJkZW58ZW58MHx8fHwxNzY0MjY1ODQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "courtyard garden"
     },
     {
       "id": "sydney-logo",
       "description": "University of Sydney Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1763365647503-aa022b5f2a5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx1bml2ZXJzaXR5JTIwY3Jlc3R8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1667017897661-47f65e263ab0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx1bml2ZXJzaXR5JTIwY3Jlc3R8ZW58MHx8fHwxNzY0MjY1ODQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university crest"
     },
     {
       "id": "sydney-banner",
       "description": "University of Sydney Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1680270518756-cc3aa58cff34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2FuZHN0b25lJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1764109403408-8c2a772d17d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzYW5kc3RvbmUlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "sandstone building"
     },
     {
       "id": "sydney-campus-1",
       "description": "Sydney campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1728206348193-9b5ae74a7d32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxxdWFkcmFuZ2xlJTIwdW5pdmVyc2l0eXxlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1693872398294-93f419e6475a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxxdWFkcmFuZ2xlJTIwdW5pdmVyc2l0eXxlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "quadrangle university"
     },
     {
       "id": "sydney-campus-2",
       "description": "Sydney campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1597920940566-a77511f9327d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsaWJyYXJ5fGVufDB8fHx8MTc2NDA2NjgyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1483736624420-dd3c4c0f12c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwbGlicmFyeXxlbnwwfHx8fDE3NjQxODI3MDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern library"
     },
     {
       "id": "sydney-campus-3",
       "description": "Sydney campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1609134545388-bfa473d9ef13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxhd258ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1763890498949-efd5d4acb8ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdHVkZW50cyUyMGxhd258ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "students lawn"
     },
     {
       "id": "eth-logo",
       "description": "ETH Zurich Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1564020107872-b7ea9d3555f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzaW1wbGUlMjBsb2dvfGVufDB8fHx8MTc2NDAyNTM3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1725645605924-e2b4ec25945f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzaW1wbGUlMjBsb2dvfGVufDB8fHx8MTc2NDE5NDMxMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "simple logo"
     },
     {
       "id": "eth-banner",
       "description": "ETH Zurich Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1629614159851-8ab17f7184ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2l0eSUyMG1vdW50YWlufGVufDB8fHx8MTc2NDA5ODYzNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1605453288713-e215a57e30ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaXR5JTIwbW91bnRhaW58ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "city mountain"
     },
     {
       "id": "eth-campus-1",
       "description": "ETH campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1728530555664-4d6c4d91503b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwdmlld3xlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1762395335889-7f82f41fc58a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pdmVyc2l0eSUyMHZpZXd8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "university view"
     },
     {
       "id": "eth-campus-2",
       "description": "ETH campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1631510390389-c1e4fb20ff31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjQwODc1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1594873604892-b599f847e859?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjQyMDg0MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern interior"
     },
     {
       "id": "eth-campus-3",
       "description": "ETH campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzY2llbmNlJTIwbGFifGVufDB8fHx8MTc2Mzk5OTk4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzY2llbmNlJTIwbGFifGVufDB8fHx8MTc2NDI0ODc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "science lab"
     },
     {
       "id": "nus-logo",
       "description": "NUS Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1682795659221-cd5cea1217cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxibHVlJTIwbG9nb3xlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1761223956853-7c7c12ebff18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Ymx1ZSUyMGxvZ298ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "blue logo"
     },
     {
       "id": "nus-banner",
       "description": "NUS Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1763890763477-ce5a183b16ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxncmVlbiUyMGNhbXB1c3xlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1718819995034-54fcaeebef8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Z3JlZW4lMjBjYW1wdXN8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "green campus"
     },
     {
       "id": "nus-campus-1",
       "description": "NUS campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1656321717360-be568acc171b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0cm9waWNhbCUyMGNhbXB1c3xlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1656321717360-be568acc171b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0cm9waWNhbCUyMGNhbXB1c3xlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tropical campus"
     },
     {
       "id": "nus-campus-2",
       "description": "NUS campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxidXNpbmVzcyUyMHNjaG9vbHxlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1563461660947-507ef49e9c47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxidXNpbmVzcyUyMHNjaG9vbHxlbnwwfHx8fDE3NjQyNjU4NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "business school"
     },
     {
       "id": "nus-campus-3",
       "description": "NUS campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1721108190557-6102c42ca262?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwcGxhemF8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1696238572906-2a85322d2152?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzdHVkZW50JTIwcGxhemF8ZW58MHx8fHwxNzY0MjY1ODUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student plaza"
     },
     {
       "id": "ucl-logo",
       "description": "UCL Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1674404901973-a82151def901?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwdXJwbGUlMjBsb2dvfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1761223956832-a1e341babb92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwdXJwbGUlMjBsb2dvfGVufDB8fHx8MTc2NDI2NTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "purple logo"
     },
     {
       "id": "ucl-banner",
       "description": "UCL Banner",
-      "imageUrl": "https://images.unsplash.com/photo-1533572778023-7745dfa85445?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsb25kb24lMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1727193136934-208087bf420d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb25kb24lMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "london building"
     },
     {
       "id": "ucl-campus-1",
       "description": "UCL campus photo 1",
-      "imageUrl": "https://images.unsplash.com/photo-1720055378671-320bbecef915?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwb3J0aWNvJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1561906643-86d3adfb2856?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwb3J0aWNvJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MjY1ODUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "portico building"
     },
     {
       "id": "ucl-campus-2",
       "description": "UCL campus photo 2",
-      "imageUrl": "https://images.unsplash.com/photo-1546953304-5d96f43c2e94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYWluJTIwbGlicmFyeXxlbnwwfHx8fDE3NjQwOTg2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1638189039353-05f9cab29b2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYWluJTIwbGlicmFyeXxlbnwwfHx8fDE3NjQyNjU4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "main library"
     },
     {
       "id": "ucl-campus-3",
       "description": "UCL campus photo 3",
-      "imageUrl": "https://images.unsplash.com/photo-1759164867699-ced5879ef3de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50JTIwY2VudHJlfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1590579491624-f98f36d4c763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50JTIwY2VudHJlfGVufDB8fHx8MTc2NDI2NTg1MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "student centre"
     },
     {
       "id": "about-mission",
       "description": "Students collaborating",
-      "imageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1728455635901-bb16530faf40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdHVkZW50cyUyMHN0dWR5aW5nfGVufDB8fHx8MTc2NDIxMzE5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "students studying"
     },
     {
       "id": "map-placeholder",
       "description": "Placeholder map",
-      "imageUrl": "https://images.unsplash.com/photo-1476385822777-70eabacbd41f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2NDA0OTMxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1730317195705-8a265a59ed1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2NDE3MDE5NXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "city map"
     }
   ]
