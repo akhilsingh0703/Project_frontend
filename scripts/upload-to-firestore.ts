@@ -2,24 +2,31 @@
 import { db } from '../src/lib/firebase';
 import { universityData } from '../src/lib/universityData';
 import { collection, writeBatch, getDocs, query, doc } from 'firebase/firestore';
+import type { University } from '../src/lib/types';
 
 const uploadUniversities = async () => {
   const universitiesCollection = collection(db, 'universities');
   
-  // Optional: Check if data already exists to avoid duplicates
-  const existingData = await getDocs(query(universitiesCollection));
-  if (!existingData.empty) {
-    console.log('Universities collection is not empty. Skipping upload to prevent duplicates.');
-    return;
-  }
-  
-  console.log('Starting university data upload...');
+  console.log('Starting university data upload... This will overwrite existing data.');
   const batch = writeBatch(db);
 
   universityData.forEach((university) => {
-    // Create a new document reference with an auto-generated ID
     const newDocRef = doc(universitiesCollection);
-    batch.set(newDocRef, university);
+    
+    // Ensure the data conforms to the University type, especially image paths
+    const transformedUniversity: Omit<University, 'id'> = {
+      ...university,
+      images: {
+        logo: university.images.logo.startsWith('http') ? university.images.logo : `https://picsum.photos/seed/${newDocRef.id}-logo/200/200`,
+        banner: university.images.banner.startsWith('http') ? university.images.banner : `https://picsum.photos/seed/${newDocRef.id}-banner/600/400`,
+        campus: (university.images.campus.length > 0 && university.images.campus.every(img => img.startsWith('http'))) ? university.images.campus : [
+          `https://picsum.photos/seed/${newDocRef.id}-campus1/800/600`,
+          `https://picsum.photos/seed/${newDocRef.id}-campus2/800/600`,
+          `https://picsum.photos/seed/${newDocRef.id}-campus3/800/600`,
+        ],
+      },
+    };
+    batch.set(newDocRef, transformedUniversity);
   });
   
   try {

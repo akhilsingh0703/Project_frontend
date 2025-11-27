@@ -1,3 +1,4 @@
+
 import { getUniversityById, getUniversities } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -47,7 +48,7 @@ export default async function UniversityDetailPage({
   }
 
   const mapImage = PlaceHolderImages.find((img) => img.id === 'map-placeholder');
-  const logoImage = PlaceHolderImages.find(img => img.id === 'university-logo');
+  const logoSrc = university.images.logo || `https://picsum.photos/seed/${university.id}-logo/200/200`;
 
   const quickFacts = [
     { label: 'GPA', value: university.quickFacts.gpa || 'N/A', icon: GraduationCap },
@@ -75,13 +76,13 @@ export default async function UniversityDetailPage({
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="relative h-24 w-24 md:h-32 md:w-32 rounded-lg overflow-hidden border-4 border-background bg-background shadow-lg shrink-0">
-              {logoImage && <Image
-                src={logoImage.imageUrl}
+              <Image
+                src={logoSrc}
                 alt={`${university.name} logo`}
                 fill
                 className="object-contain p-2"
-                data-ai-hint={logoImage.imageHint}
-              />}
+                data-ai-hint="logo crest"
+              />
             </div>
             <div className="flex-grow">
               <h1 className="font-headline text-2xl md:text-4xl font-bold">
@@ -277,3 +278,5 @@ export default async function UniversityDetailPage({
     </div>
   );
 }
+
+    

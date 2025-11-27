@@ -1,8 +1,4 @@
 
-
-
-
-      
 import Image from 'next/image';
 import Link from 'next/link';
 import type { University } from '@/lib/types';
@@ -23,15 +19,9 @@ interface UniversityCardProps {
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
-  const bannerImage = {
-    imageUrl: `https://picsum.photos/seed/${university.id}-banner/600/400`,
-    description: `${university.name} banner`,
-  };
-  const logoImage = {
-    imageUrl: `https://picsum.photos/seed/${university.id}-logo/200/200`,
-    description: `${university.name} logo`,
-  };
-
+  const bannerImageUrl = university.images?.banner || `https://picsum.photos/seed/${university.id}-banner/600/400`;
+  const logoImageUrl = university.images?.logo || `https://picsum.photos/seed/${university.id}-logo/200/200`;
+  
   const undergraduateTuition = university.tuition?.undergraduate;
 
   return (
@@ -39,27 +29,23 @@ export function UniversityCard({ university }: UniversityCardProps) {
       <CardHeader className="p-0">
         <Link href={`/universities/${university.id}`}>
           <div className="relative h-48 w-full">
-            {bannerImage && (
-              <Image
-                src={university.images.banner || bannerImage.imageUrl}
-                alt={bannerImage.description}
+            <Image
+                src={bannerImageUrl}
+                alt={`${university.name} banner`}
                 fill
                 className="object-cover"
                 data-ai-hint="university campus"
-              />
-            )}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 flex items-center gap-4">
               <div className="relative h-16 w-16 rounded-lg overflow-hidden border-2 border-background bg-background shadow-md">
-                {logoImage && (
-                  <Image
-                    src={university.images.logo || logoImage.imageUrl}
-                    alt={logoImage.description}
+                <Image
+                    src={logoImageUrl}
+                    alt={`${university.name} logo`}
                     fill
                     className="object-contain p-1"
                     data-ai-hint="logo crest"
-                  />
-                )}
+                />
               </div>
             </div>
           </div>
@@ -126,4 +112,3 @@ export function UniversityCard({ university }: UniversityCardProps) {
     </Card>
   );
 }
-    

@@ -1,3 +1,4 @@
+
 import type { University } from './types';
 
 export const universityData: Omit<University, 'id'>[] = [
@@ -42,7 +43,7 @@ export const universityData: Omit<University, 'id'>[] = [
         graduationRate: 85,
     },
     tuition: {
-        undergraduate: 15000,
+        undergraduate: 200000,
         graduate: 20000,
         roomAndBoard: 75000,
     },
@@ -142,7 +143,7 @@ export const universityData: Omit<University, 'id'>[] = [
       graduationRate: 95,
     },
     tuition: {
-        undergraduate: 225000,
+        undergraduate: 220000,
         graduate: 180000,
         roomAndBoard: 90000,
     },
@@ -258,9 +259,9 @@ export const universityData: Omit<University, 'id'>[] = [
       internationalRequirements: 'As per university norms',
     },
     tuition: {
-        undergraduate: 150000.0,
-        graduate: 200000.0,
-        roomAndBoard: 80000.0
+        undergraduate: 150000,
+        graduate: 200000,
+        roomAndBoard: 80000,
     },
     map: {
         address: 'Ramchandrapur, Jatni, Bhubaneswar, Odisha 752050, India',

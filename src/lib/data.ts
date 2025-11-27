@@ -6,9 +6,41 @@ import type { University } from './types';
 // Server-side cache for universities
 let universityCache: University[] | null = null;
 
+// Helper to ensure a university object has valid data
+const sanitizeUniversity = (uni: any, id: string): University => {
+  return {
+    id: id,
+    name: uni.name || 'Unknown University',
+    location: uni.location || { city: 'Unknown', state: 'Unknown', country: 'Unknown' },
+    description: uni.description || '',
+    images: {
+      logo: uni.images?.logo || `https://picsum.photos/seed/${id}-logo/200/200`,
+      banner: uni.images?.banner || `https://picsum.photos/seed/${id}-banner/600/400`,
+      campus: Array.isArray(uni.images?.campus) && uni.images.campus.length > 0 ? uni.images.campus : [
+        `https://picsum.photos/seed/${id}-campus1/800/600`,
+        `https://picsum.photos/seed/${id}-campus2/800/600`,
+        `https://picsum.photos/seed/${id}-campus3/800/600`,
+      ],
+    },
+    website: uni.website || '',
+    establishedYear: uni.establishedYear || 0,
+    type: uni.type || 'Private',
+    setting: uni.setting || 'Urban',
+    studentPopulation: uni.studentPopulation || 0,
+    quickFacts: uni.quickFacts || { acceptanceRate: 0, studentFacultyRatio: 'N/A', graduationRate: 0 },
+    tuition: uni.tuition || { undergraduate: 0, graduate: 0, roomAndBoard: 0 },
+    programs: Array.isArray(uni.programs) ? uni.programs : [],
+    courses: Array.isArray(uni.courses) ? uni.courses : [],
+    financialAid: uni.financialAid || { scholarshipsAvailable: false, details: '' },
+    admissions: uni.admissions || { deadline: 'N/A', requiredDocuments: [], applicationFee: 0, internationalRequirements: '' },
+    map: uni.map || { address: '', lat: 0, lng: 0 },
+    notableAlumni: Array.isArray(uni.notableAlumni) ? uni.notableAlumni : [],
+    popularPrograms: Array.isArray(uni.popularPrograms) ? uni.popularPrograms : [],
+  };
+};
+
 // Get all universities from Firestore with caching
 export const getUniversities = async (): Promise<University[]> => {
-  // If we have data in cache, return it
   if (universityCache) {
     return universityCache;
   }
@@ -19,25 +51,21 @@ export const getUniversities = async (): Promise<University[]> => {
       console.log('No universities found.');
       return [];
     }
-    const universities = querySnapshot.docs.map((doc) => {
-      // Type assertion to University, assuming Firestore data matches the type
-      return { id: doc.id, ...doc.data() } as University;
-    });
+    const universities = querySnapshot.docs.map((doc) =>
+      sanitizeUniversity(doc.data(), doc.id)
+    );
 
-    // Store the fetched data in the cache
     universityCache = universities;
     
     return universities;
   } catch (error) {
     console.error("Error fetching universities:", error);
-    // In case of an error, don't cache and return an empty array to avoid crashing the app
     return [];
   }
 };
 
 // Get a single university by its ID from Firestore
 export const getUniversityById = async (id: string): Promise<University | undefined> => {
-  // First, check the cache for the university
   if (universityCache) {
     const cachedUniversity = universityCache.find(uni => uni.id === id);
     if (cachedUniversity) {
@@ -45,16 +73,13 @@ export const getUniversityById = async (id: string): Promise<University | undefi
     }
   }
 
-  // If not in cache, fetch from Firestore
   try {
     const docRef = doc(db, 'universities', id);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      // Type assertion to University, assuming Firestore data matches the type
-      return { id: docSnap.id, ...docSnap.data() } as University;
+      return sanitizeUniversity(docSnap.data(), docSnap.id);
     } else {
-      // doc.data() will be undefined in this case
       console.log('No such document!');
       return undefined;
     }
