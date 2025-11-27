@@ -47,6 +47,7 @@ export default async function UniversityDetailPage({
   }
 
   const mapImage = PlaceHolderImages.find((img) => img.id === 'map-placeholder');
+  const logoImage = PlaceHolderImages.find(img => img.id === 'university-logo');
 
   const quickFacts = [
     { label: 'Acceptance Rate', value: `${university.quickFacts.acceptanceRate}%`, icon: Percent },
@@ -76,13 +77,13 @@ export default async function UniversityDetailPage({
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="relative h-24 w-24 md:h-32 md:w-32 rounded-lg overflow-hidden border-4 border-background bg-background shadow-lg shrink-0">
-              <Image
-                src={university.images.logo}
+              {logoImage && <Image
+                src={logoImage.imageUrl}
                 alt={`${university.name} logo`}
                 fill
                 className="object-contain p-2"
-                data-ai-hint="logo crest"
-              />
+                data-ai-hint={logoImage.imageHint}
+              />}
             </div>
             <div className="flex-grow">
               <h1 className="font-headline text-2xl md:text-4xl font-bold">
