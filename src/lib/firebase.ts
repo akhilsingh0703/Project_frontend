@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getStorage } from "firebase/storage";
-import { getDatabase } from "firebase/database";
+import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
+import { getFirestore, type Firestore } from "firebase/firestore";
+import { getAuth, type Auth } from "firebase/auth";
+import { getStorage, type FirebaseStorage } from "firebase/storage";
+import { getDatabase, type Database } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,11 +16,11 @@ const firebaseConfig = {
   databaseURL: "https://studio-6440466613-89ca6-default-rtdb.firebaseio.com"
 };
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
-const auth = getAuth(app);
-const storage = getStorage(app);
-const database = getDatabase(app);
+// Initialize Firebase for SSR
+const app: FirebaseApp = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db: Firestore = getFirestore(app);
+const auth: Auth = getAuth(app);
+const storage: FirebaseStorage = getStorage(app);
+const database: Database = getDatabase(app);
 
 export { app, db, auth, storage, database };
