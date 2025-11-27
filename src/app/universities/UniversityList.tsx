@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/table';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { AddToCompareButton } from '@/components/AddToCompareButton';
 
 interface UniversityListProps {
   allUniversities: University[];
@@ -48,14 +49,15 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
     return allUniversities.filter(uni => {
       const stateMatch = filters.state === 'all' || uni.location.state === filters.state;
       const typeMatch = filters.courseType === 'all' || uni.type === filters.courseType;
-      const streamMatch = filters.stream === 'all' || uni.programs.some(p => p.stream === filters.stream);
-      const courseMatch = filters.course === 'all' || uni.programs.some(p => p.name === filters.course);
+      const streamMatch = filters.stream === 'all' || uni.programs.some(p => p.department === filters.stream);
 
       // A simple fee range check, assuming tuition is a number.
       const feeMatch = filters.feeRange === 'all' || 
         (filters.feeRange === 'low' && uni.tuition.undergraduate < 100000) ||
         (filters.feeRange === 'medium' && uni.tuition.undergraduate >= 100000 && uni.tuition.undergraduate <= 300000) ||
         (filters.feeRange === 'high' && uni.tuition.undergraduate > 300000);
+        
+      const courseMatch = filters.course === 'all' || uni.programs.some(p => p.name === filters.course) || uni.courses.some(c => c.name === filters.course);
 
       return stateMatch && typeMatch && streamMatch && feeMatch && courseMatch;
     });
@@ -63,7 +65,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
 
   // Get unique values for filters
   const states = ['all', ...Array.from(new Set(allUniversities.map(u => u.location.state)))];
-  const streams = ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.stream))))];
+  const streams = ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.department))))];
 
 
   return (
@@ -131,7 +133,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
                   <TableCell>{uni.location.city}</TableCell>
                   <TableCell>₹{uni.tuition.undergraduate.toLocaleString()}</TableCell>
                    <TableCell>
-                    <input type="checkbox" />
+                    <AddToCompareButton universityId={uni.id} />
                   </TableCell>
                 </TableRow>
               ))
