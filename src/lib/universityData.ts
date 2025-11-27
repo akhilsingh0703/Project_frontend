@@ -38,6 +38,11 @@ export const universityData: Omit<University, 'id'>[] = [
     establishedYear: 1922,
     setting: 'Urban',
     studentPopulation: 132435,
+    quickFacts: {
+        acceptanceRate: 98,
+        graduationRate: 85,
+        studentFacultyRatio: '16:1',
+    },
     courses: [
       {
         category: 'Undergraduate',
@@ -73,6 +78,11 @@ export const universityData: Omit<University, 'id'>[] = [
         cutoffExam: 'DUET PG',
       },
     ],
+    tuition: {
+        undergraduate: 15000,
+        graduate: 12000,
+        roomAndBoard: 75000,
+    },
     financialAid: {
       scholarshipsAvailable: true,
       details: 'Merit-based and need-based scholarships are available.',
@@ -129,6 +139,9 @@ export const universityData: Omit<University, 'id'>[] = [
     studentPopulation: 10000,
     quickFacts: {
       satRange: '1450-1570',
+      acceptanceRate: 17,
+      graduationRate: 95,
+      studentFacultyRatio: '10:1',
     },
     courses: [
       {
@@ -154,6 +167,11 @@ export const universityData: Omit<University, 'id'>[] = [
         cutoffExam: 'GATE',
       },
     ],
+    tuition: {
+        undergraduate: 225000,
+        graduate: 180000,
+        roomAndBoard: 90000,
+    },
     financialAid: {
       scholarshipsAvailable: true,
       details:
@@ -177,5 +195,81 @@ export const universityData: Omit<University, 'id'>[] = [
       'Mechanical Engineering',
       'Electrical Engineering',
     ],
+  },
+  {
+    name: 'Centurion University of Technology and Management, Bhubaneswar',
+    location: {
+      city: 'Bhubaneswar',
+      state: 'Odisha',
+      country: 'India',
+    },
+    description: "Centurion University's School of Management in Bhubaneswar is best described by its focus on skill-integrated education and industry relevance, aligning its curriculum with the requirements of Industry 4.0. It aims to develop strategic and operational skills through a combination of coursework and job-readiness courses like Data Analytics, Retail Sales, and IELTS prep. The school also emphasizes holistic development through leadership, collaboration, and communication skills, and is committed to social outreach and the UN's Sustainable Development Goals (SDGs).",
+    images: {
+      logo: 'https://images.shiksha.com/mediadata/images/1650542874phpqTvh4T.jpeg',
+      banner: 'https://images.shiksha.com/mediadata/images/1650542961phpkgitSL.jpeg',
+      campus: [],
+    },
+    website: 'https://cutm.ac.in/',
+    establishedYear: 2005,
+    type: 'Private',
+    setting: 'Urban',
+    studentPopulation: 6000,
+    quickFacts: {
+      gpa: '3.5',
+      satRange: '1200-1400',
+      actRange: '24-30',
+      studentFacultyRatio: '15:1',
+      acceptanceRate: 72.5,
+      graduationRate: 89.3,
+    },
+    programs: [
+      {
+        name: 'B.E. / B.Tech',
+        department: 'School of Engineering',
+        duration: '4 years',
+      },
+      {
+        name: 'B.Sc.',
+        department: 'School of Agriculture',
+        duration: '4 years',
+      },
+    ],
+    courses: [
+      {
+        category: 'Engineering',
+        name: 'B.Tech Computer Science',
+        rating: 4.2,
+        reviews: 10,
+        views: 1500,
+        fees: 150000,
+        applicationDate: '25 Dec - 25 May 2025',
+        cutoffRank: 'CUEE Rank',
+        cutoffExam: 'CUEE',
+      },
+    ],
+    tuition: {
+      undergraduate: 150000.0,
+      graduate: 200000.0,
+      roomAndBoard: 80000.0,
+    },
+    financialAid: {
+      scholarshipsAvailable: true,
+      details: 'Various state and national level scholarships are accepted.',
+    },
+    admissions: {
+      deadline: '2 Sept',
+      requiredDocuments: [
+        '10th and 12th Marksheet', 'CUEE Scorecard', 'ID Proof'
+      ],
+      applicationFee: 600,
+      internationalRequirements: 'As per university norms',
+    },
+    map: {
+        address: 'Ramchandrapur, Jatni, Bhubaneswar, Odisha 752050, India',
+        lat: 20.149,
+        lng: 85.706,
+    },
+    notableAlumni: [],
+    popularPrograms: ['B.Tech', 'B.Sc Agriculture', 'MBA'],
   },
 ];
