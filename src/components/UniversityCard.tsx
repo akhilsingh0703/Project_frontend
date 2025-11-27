@@ -1,4 +1,5 @@
 
+
       
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,17 +13,22 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Percent, Users, ArrowRight, Calendar } from 'lucide-react';
+import { MapPin, Percent, Users, ArrowRight, Calendar, Building } from 'lucide-react';
 import { AddToCompareButton } from './AddToCompareButton';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 interface UniversityCardProps {
   university: University;
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
-  const bannerImage = PlaceHolderImages.find(img => img.id === 'university-banner');
-  const logoImage = PlaceHolderImages.find(img => img.id === 'university-logo');
+  const bannerImage = {
+    imageUrl: `https://picsum.photos/seed/${university.id}-banner/600/400`,
+    description: `${university.name} banner`,
+  };
+  const logoImage = {
+    imageUrl: `https://picsum.photos/seed/${university.id}-logo/200/200`,
+    description: `${university.name} logo`,
+  };
 
   return (
     <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
@@ -32,7 +38,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
             {bannerImage && (
               <Image
                 src={bannerImage.imageUrl}
-                alt={`${university.name} banner`}
+                alt={bannerImage.description}
                 fill
                 className="object-cover"
                 data-ai-hint="university campus"
@@ -44,7 +50,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
                 {logoImage && (
                   <Image
                     src={logoImage.imageUrl}
-                    alt={`${university.name} logo`}
+                    alt={logoImage.description}
                     fill
                     className="object-contain p-1"
                     data-ai-hint="logo crest"
@@ -61,15 +67,22 @@ export function UniversityCard({ university }: UniversityCardProps) {
             {university.name}
           </CardTitle>
         </Link>
-        <div className="flex items-center text-muted-foreground text-sm mt-2">
-          <MapPin className="h-4 w-4 mr-2" />
-          <span>
-            {university.location.city}, {university.location.country}
-          </span>
-        </div>
-        <div className="flex items-center text-muted-foreground text-sm mt-1">
-            <Calendar className="h-4 w-4 mr-2" />
-            <span>Estd. {university.establishedYear}</span>
+        
+        <div className="flex items-center justify-between text-muted-foreground text-sm mt-2">
+            <div className="flex items-center">
+                <MapPin className="h-4 w-4 mr-2" />
+                <span>
+                    {university.location.city}, {university.location.country}
+                </span>
+            </div>
+            <div className="flex items-center">
+                <Calendar className="h-4 w-4 mr-2" />
+                <span>Estd. {university.establishedYear}</span>
+            </div>
+             <div className="flex items-center">
+                <Building className="h-4 w-4 mr-2" />
+                <span>{university.type}</span>
+            </div>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -107,6 +120,4 @@ export function UniversityCard({ university }: UniversityCardProps) {
     </Card>
   );
 }
-
-
     
