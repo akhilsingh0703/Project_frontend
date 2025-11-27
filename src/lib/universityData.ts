@@ -207,3 +207,5 @@ export const universityData: Omit<University, 'id'>[] = [
     popularPrograms: ['Physics', 'Biology', 'Materials Science'],
   },
 ];
+
+    
