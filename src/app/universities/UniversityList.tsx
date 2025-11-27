@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useId } from 'react';
 import type { University } from '@/lib/types';
 import {
   Select,
@@ -67,6 +67,9 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
   const states = ['all', ...Array.from(new Set(allUniversities.map(u => u.location.state)))];
   const streams = ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs.map(p => p.department))))];
 
+  const stateSelectId = useId();
+  const streamSelectId = useId();
+  const feeSelectId = useId();
 
   return (
     <div className="mt-6">
@@ -79,7 +82,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="State" />
           </SelectTrigger>
           <SelectContent>
-            {states.map(s => <SelectItem key={s} value={s}>{s === 'all' ? 'All States' : s}</SelectItem>)}
+            {states.map(s => <SelectItem key={`${stateSelectId}-${s}`} value={s}>{s === 'all' ? 'All States' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -90,7 +93,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="Stream" />
           </SelectTrigger>
           <SelectContent>
-             {streams.map(s => <SelectItem key={s} value={s}>{s === 'all' ? 'All Streams' : s}</SelectItem>)}
+             {streams.map(s => <SelectItem key={`${streamSelectId}-${s}`} value={s}>{s === 'all' ? 'All Streams' : s}</SelectItem>)}
           </SelectContent>
         </Select>
         <Select
@@ -101,10 +104,10 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
             <SelectValue placeholder="Fee Range" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">All Ranges</SelectItem>
-            <SelectItem value="low">Less than ₹1,00,000</SelectItem>
-            <SelectItem value="medium">₹1,00,000 - ₹3,00,000</SelectItem>
-            <SelectItem value="high">More than ₹3,00,000</SelectItem>
+            <SelectItem key={`${feeSelectId}-all`} value="all">All Ranges</SelectItem>
+            <SelectItem key={`${feeSelectId}-low`} value="low">Less than ₹1,00,000</SelectItem>
+            <SelectItem key={`${feeSelectId}-medium`} value="medium">₹1,00,000 - ₹3,00,000</SelectItem>
+            <SelectItem key={`${feeSelectId}-high`} value="high">More than ₹3,00,000</SelectItem>
           </SelectContent>
         </Select>
         <Button className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
