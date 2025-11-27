@@ -1,12 +1,13 @@
+
 import { getUniversities } from '@/lib/data';
 import { UniversityList } from './UniversityList';
 import Image from 'next/image';
 import { Suspense } from 'react';
-const PlaceHolderImages = require('@/lib/placeholder-images.json');
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default async function UniversitiesPage() {
   const universities = await getUniversities();
-  const heroImage = PlaceHolderImages.placeholderImages.find((img: any) => img.id === 'ucl-banner');
+  const heroImage = PlaceHolderImages.find((img: any) => img.id === 'ucl-banner');
 
   return (
     <>
