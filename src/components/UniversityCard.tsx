@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Percent, Users, ArrowRight } from 'lucide-react';
+import { MapPin, Percent, Users, ArrowRight, Calendar } from 'lucide-react';
 import { AddToCompareButton } from './AddToCompareButton';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -66,6 +66,10 @@ export function UniversityCard({ university }: UniversityCardProps) {
           <span>
             {university.location.city}, {university.location.country}
           </span>
+        </div>
+        <div className="flex items-center text-muted-foreground text-sm mt-1">
+            <Calendar className="h-4 w-4 mr-2" />
+            <span>Estd. {university.establishedYear}</span>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
