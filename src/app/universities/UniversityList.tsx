@@ -67,7 +67,7 @@ export function UniversityList({ allUniversities }: UniversityListProps) {
   // Get unique values for filters
   const states = useMemo(() => ['all', ...Array.from(new Set(allUniversities.filter(u => u?.location?.state).map(u => u.location.state)))], [allUniversities]);
   const types = useMemo(() => ['all', ...Array.from(new Set(allUniversities.filter(u => u?.type).map(u => u.type)))], [allUniversities]);
-  const streams = useMemo(() => ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs?.map(p => p.department) || [])))], [allUniversities]);
+  const streams = useMemo(() => ['all', ...Array.from(new Set(allUniversities.flatMap(u => u.programs?.map(p => p.department) || []).filter(Boolean)))], [allUniversities]);
   const listId = useId();
 
   return (

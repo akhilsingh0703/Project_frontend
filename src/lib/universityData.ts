@@ -1,4 +1,3 @@
-
 import type { University } from './types';
 
 export const universityData: Omit<University, 'id'>[] = [
@@ -229,7 +228,7 @@ export const universityData: Omit<University, 'id'>[] = [
       },
       {
         name: 'B.Sc.',
-        department: 'School of Agriculture',
+        department: 'Agriculture',
         duration: '4 years',
       },
     ],

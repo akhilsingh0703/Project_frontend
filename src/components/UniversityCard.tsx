@@ -1,6 +1,7 @@
 
 
 
+
       
 import Image from 'next/image';
 import Link from 'next/link';
@@ -89,7 +90,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-            {university.popularPrograms.slice(0, 3).map((program) => (
+            {university.popularPrograms && university.popularPrograms.slice(0, 3).map((program) => (
                 <Badge key={program} variant="secondary">{program}</Badge>
             ))}
         </div>
