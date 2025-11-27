@@ -2,9 +2,15 @@
 import { collection, getDocs, doc, writeBatch } from 'firebase/firestore';
 import { db } from '../src/lib/firebase';
 import { universityData } from '../src/lib/universityData';
+import type { University } from '../src/lib/types';
 
 const updateImageUrls = async () => {
   console.log('Starting to update image URLs in Firestore...');
+
+  if (!db) {
+    console.error("Firestore database is not initialized. Check your firebase configuration.");
+    return;
+  }
 
   const universitiesCollectionRef = collection(db, 'universities');
   const querySnapshot = await getDocs(universitiesCollectionRef);
@@ -18,24 +24,29 @@ const updateImageUrls = async () => {
   let updatedCount = 0;
 
   querySnapshot.forEach((firestoreDoc) => {
-    const universityName = firestoreDoc.data().name;
+    const firestoreData = firestoreDoc.data() as Omit<University, 'id'>;
+    const universityName = firestoreData.name;
     const matchingLocalData = universityData.find(u => u.name === universityName);
 
-    if (matchingLocalData) {
+    if (matchingLocalData && matchingLocalData.images) {
       const docRef = doc(db, 'universities', firestoreDoc.id);
       batch.update(docRef, { images: matchingLocalData.images });
       updatedCount++;
       console.log(`Scheduled update for: ${universityName}`);
     } else {
-      console.log(`No matching local data found for: ${universityName}`);
+      console.log(`No matching local data or images found for: ${universityName}`);
     }
   });
 
-  try {
-    await batch.commit();
-    console.log(`Successfully updated image URLs for ${updatedCount} universities.`);
-  } catch (error) {
-    console.error('Error committing batch update:', error);
+  if (updatedCount > 0) {
+    try {
+      await batch.commit();
+      console.log(`Successfully updated image URLs for ${updatedCount} universities.`);
+    } catch (error) {
+      console.error('Error committing batch update:', error);
+    }
+  } else {
+    console.log('No universities were updated.');
   }
 
   console.log('Image URL update process finished.');
@@ -43,11 +54,9 @@ const updateImageUrls = async () => {
 };
 
 updateImageUrls().then(() => {
-    // Manually exit to prevent the script from hanging.
-    process.exit(0);
+    console.log('Script finished successfully.');
+    // In a standalone script, you might use process.exit(0), but it's not needed here as the function will complete and the process will terminate.
 }).catch(err => {
     console.error("Script failed:", err);
-    process.exit(1);
+    // In a standalone script, you might use process.exit(1) for errors.
 });
-
-    
