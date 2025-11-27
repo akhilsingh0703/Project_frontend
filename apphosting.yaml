@@ -5,3 +5,8 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+
+# Defines a backend that will be created in Cloud Run
+backend:
+  # The location to build the server bundle for the backend.
+  source: backend

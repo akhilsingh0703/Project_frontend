@@ -1,6 +1,7 @@
 import { getUniversities } from '@/lib/data';
 import { UniversityList } from './UniversityList';
 import Image from 'next/image';
+import { Suspense } from 'react';
 const PlaceHolderImages = require('@/lib/placeholder-images.json');
 
 export default async function UniversitiesPage() {
@@ -31,7 +32,9 @@ export default async function UniversitiesPage() {
       </section>
 
       <div className="container mx-auto px-4 py-8">
-        <UniversityList allUniversities={universities} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <UniversityList allUniversities={universities} />
+        </Suspense>
       </div>
     </>
   );

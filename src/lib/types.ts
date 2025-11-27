@@ -3,6 +3,7 @@ export type University = {
   name: string;
   location: {
     city: string;
+    state: string;
     country: string;
   };
   description: string;
@@ -67,3 +68,5 @@ export type Course = {
   cutoffRank: string;
   cutoffExam: string;
 };
+
+    

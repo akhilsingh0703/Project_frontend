@@ -1,3 +1,4 @@
+
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.universityData = void 0;
@@ -11,9 +12,13 @@ exports.universityData = [
         description: 'A premier university in India, known for its high standards in teaching and research and attracts eminent scholars to its faculty.',
         website: 'http://www.du.ac.in',
         images: {
-            logo: 'delhi-university.png',
-            banner: 'delhi-university-campus.png',
-            campus: [],
+            logo: 'https://images.unsplash.com/photo-1646409203769-8a80f02c0ce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcmVzdCUyMGxvZ298ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+            banner: 'https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA1NDExNHww&ixlibrb-4.1.0&q=80&w=1080',
+            campus: [
+                "https://images.unsplash.com/photo-1646400592070-b337fbfe61f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx1bml2ZXJzaXR5JTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+                "https://images.unsplash.com/photo-1670528148572-9270351b95bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2NDA5ODYzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+                "https://images.unsplash.com/photo-1544531585-f14f463149ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZWN0dXJlJTIwaGFsbHxlbnwwfHx8fDE3NjQwNDkxOTh8MA&ixlib-rb-4.1.0&q=80&w=1080"
+            ],
         },
         programs: [
             {
@@ -69,53 +74,8 @@ exports.universityData = [
         description: 'One of the top engineering colleges in India, IIT Bombay is renowned for its flagship programs in engineering and technology.',
         website: 'http://www.iitb.ac.in',
         images: {
-            logo: 'iit-bombay.png',
-            banner: 'iit-bombay-campus.png',
-            campus: [],
-        },
-        programs: [
-            {
-                name: 'B.Tech Mechanical Engineering',
-                department: 'Engineering',
-                duration: '4 years',
-            },
-            {
-                name: 'M.Tech Electrical Engineering',
-                department: 'Engineering',
-                duration: '2 years',
-            },
-        ],
-        tuition: {
-            undergraduate: 220000,
-            graduate: 175000,
-            roomAndBoard: 120000,
-        },
-        type: 'Public',
-        establishedYear: 1958,
-        setting: 'Urban',
-        studentPopulation: 10000,
-        quickFacts: {
-            acceptanceRate: 10,
-            studentFacultyRatio: '8:1',
-            graduationRate: 95,
-        },
-        courses: [],
-        financialAid: {
-            scholarshipsAvailable: true,
-            details: "Various scholarships and financial assistance schemes are available.",
-        },
-        admissions: {
-            deadline: '2024-07-31',
-            requiredDocuments: ['JEE Advanced Score', 'Class 12 Marksheet'],
-            applicationFee: 1500,
-            internationalRequirements: "Specific requirements for international students are available on the website.",
-        },
-        map: {
-            address: "IIT Bombay, Powai, Mumbai, Maharashtra 400076, India",
-            lat: 19.133,
-            lng: 72.914,
-        },
-        notableAlumni: ["Nandan Nilekani", "Sundar Pichai", "Raghuram Rajan"],
-        popularPrograms: ["Computer Science", "Mechanical Engineering", "Electrical Engineering"],
-    },
-];
+            logo: 'https://images.unsplash.com/photo-1634578197578-dd387521fea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2NDA4OTY5OHww&ixlib=rb-4.1.0&q=80&w=1080',
+            banner: 'https://images.unsplash.com/photo-1554793000-245d3a3c2a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bW9kZXJuJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2NDA3OTAyMXww&ixlib-rb-4.1.0&q=80&w=1080',
+            campus: [
+                "https://images.unsplash.com/photo-1650350856922-a8c11869485d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYW1wdXMlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MDk4NjM1fDA&ixlib-rb-4.1.0&q=80&w=1080",
+                "https://images.unsplash.com/photo-1733426

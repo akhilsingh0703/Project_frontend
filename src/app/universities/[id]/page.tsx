@@ -1,4 +1,4 @@
-import { getUniversityById } from '@/lib/data';
+import { getUniversityById, getUniversities } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import {
@@ -27,6 +27,13 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Summary } from './Summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CoursesAndFees } from './CoursesAndFees';
+
+export async function generateStaticParams() {
+  const universities = await getUniversities();
+  return universities.map((university) => ({
+    id: university.id,
+  }));
+}
 
 export default async function UniversityDetailPage({
   params,
