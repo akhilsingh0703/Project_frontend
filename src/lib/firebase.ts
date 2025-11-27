@@ -3,6 +3,7 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
+import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -11,7 +12,8 @@ const firebaseConfig = {
   projectId: "studio-6440466613-89ca6",
   storageBucket: "studio-6440466613-89ca6.appspot.com",
   messagingSenderId: "97580529198",
-  appId: "1:97580529198:web:0c496e23af214f64d691bf"
+  appId: "1:97580529198:web:0c496e23af214f64d691bf",
+  databaseURL: "https://studio-6440466613-89ca6-default-rtdb.firebaseio.com"
 };
 
 // Initialize Firebase
@@ -19,5 +21,6 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
+const database = getDatabase(app);
 
-export { app, db, auth, storage };
+export { app, db, auth, storage, database };

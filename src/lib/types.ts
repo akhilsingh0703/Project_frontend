@@ -18,20 +18,12 @@ export type University = {
   setting: 'Urban' | 'Suburban' | 'Rural';
   studentPopulation: number;
   quickFacts: {
-    acceptanceRate: number;
     gpa?: string;
     satRange?: string;
     actRange?: string;
-    studentFacultyRatio: string;
-    graduationRate: number;
   };
   programs: Program[];
   courses: Course[];
-  tuition: {
-    undergraduate: number;
-    graduate: number;
-    roomAndBoard: number;
-  };
   financialAid: {
     scholarshipsAvailable: boolean;
     details: string;

@@ -1,13 +1,15 @@
-import { adminDb } from '../src/lib/firebase-admin';
+
+import { db } from '../src/lib/firebase';
 import { universityData } from '../src/lib/universityData';
+import { collection, addDoc } from 'firebase/firestore';
 
 const uploadUniversities = async () => {
-  const universitiesCollection = adminDb.collection('universities');
+  const universitiesCollection = collection(db, 'universities');
   console.log('Starting university data upload...');
 
   for (const university of universityData) {
     try {
-      const docRef = await universitiesCollection.add(university);
+      const docRef = await addDoc(universitiesCollection, university);
       console.log(`Successfully uploaded: ${university.name} with id ${docRef.id}`);
     } catch (error) {
       console.error(`Error uploading ${university.name}:`, error);
@@ -15,7 +17,9 @@ const uploadUniversities = async () => {
   }
 
   console.log('University data upload finished.');
-  process.exit(0);
+  // In a client-side script context, we can't just exit the process.
+  // This will run in a context where we can assume it completes.
 };
 
+// We will assume this script is run in an environment that can execute it.
 uploadUniversities();

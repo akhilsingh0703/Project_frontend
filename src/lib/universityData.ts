@@ -34,20 +34,10 @@ export const universityData: Omit<University, 'id'>[] = [
         duration: '2 years',
       },
     ],
-    tuition: {
-      undergraduate: 200000,
-      graduate: 150000,
-      roomAndBoard: 100000,
-    },
     type: 'Public',
     establishedYear: 1922,
     setting: 'Urban',
     studentPopulation: 132435,
-    quickFacts: {
-      acceptanceRate: 67,
-      studentFacultyRatio: '16:1',
-      graduationRate: 80,
-    },
     courses: [
       {
         category: 'Undergraduate',
@@ -133,19 +123,11 @@ export const universityData: Omit<University, 'id'>[] = [
         duration: '2 years',
       },
     ],
-    tuition: {
-      undergraduate: 220000,
-      graduate: 175000,
-      roomAndBoard: 120000,
-    },
     type: 'Public',
     establishedYear: 1958,
     setting: 'Urban',
     studentPopulation: 10000,
     quickFacts: {
-      acceptanceRate: 10,
-      studentFacultyRatio: '8:1',
-      graduationRate: 95,
       satRange: '1450-1570',
     },
     courses: [
@@ -197,5 +179,3 @@ export const universityData: Omit<University, 'id'>[] = [
     ],
   },
 ];
-
-    
