@@ -1,3 +1,5 @@
+
+      
 import { University } from './types';
 
 export const universityData: Omit<University, 'id'>[] = [
@@ -194,72 +196,6 @@ export const universityData: Omit<University, 'id'>[] = [
       'Electrical Engineering',
     ],
   },
-  {
-    name: 'Indian Institute of Science',
-    location: {
-      city: 'Bengaluru',
-      state: 'Karnataka',
-      country: 'India',
-    },
-    description:
-      'A leading institution for scientific research and higher education in India.',
-    website: 'https://www.iisc.ac.in',
-    images: {
-      logo: 'https://picsum.photos/seed/iisc_logo/200/200',
-      banner: 'https://picsum.photos/seed/iisc_banner/800/600',
-      campus: [
-        'https://picsum.photos/seed/iisc_campus1/800/600',
-        'https://picsum.photos/seed/iisc_campus2/800/600',
-        'https://picsum.photos/seed/iisc_campus3/800/600',
-      ],
-    },
-    programs: [
-      {
-        name: 'Bachelor of Science (Research)',
-        department: 'Science',
-        duration: '4 years',
-      },
-      {
-        name: 'M.Tech in Artificial Intelligence',
-        department: 'Engineering',
-        duration: '2 years',
-      },
-    ],
-    tuition: {
-      undergraduate: 150000,
-      graduate: 200000,
-      roomAndBoard: 80000,
-    },
-    type: 'Public',
-    establishedYear: 1909,
-    setting: 'Urban',
-    studentPopulation: 4000,
-    quickFacts: {
-      acceptanceRate: 15,
-      studentFacultyRatio: '7:1',
-      graduationRate: 97,
-    },
-    courses: [
-        { "category": "Undergraduate", "name": "B.S. (Research)", "rating": 4.9, "reviews": 300, "views": 6000, "fees": 160000, "applicationDate": "2024-04-25", "cutoffRank": "JEE Main/Adv.", "cutoffExam": "JEE" },
-        { "category": "Postgraduate", "name": "M.Sc. in Life Sciences", "rating": 4.8, "reviews": 180, "views": 3500, "fees": 210000, "applicationDate": "2024-03-31", "cutoffRank": "JAM", "cutoffExam": "JAM" },
-        { "category": "PhD", "name": "Ph.D. in Physics", "rating": 4.9, "reviews": 220, "views": 2800, "fees": 25000, "applicationDate": "2024-10-31", "cutoffRank": "GATE/JEST", "cutoffExam": "GATE/JEST" }
-    ],
-    financialAid: {
-      scholarshipsAvailable: true,
-      details: 'Full tuition waiver for most Ph.D. students and several scholarships for other degrees.',
-    },
-    admissions: {
-      deadline: 'Varies by program',
-      requiredDocuments: ['Academic Transcripts', 'Entrance Exam Scores (GATE, JEE, etc.)'],
-      applicationFee: 800,
-      internationalRequirements: 'GRE/GMAT and TOEFL/IELTS may be required.',
-    },
-    map: {
-      address: 'CV Raman Rd, Bengaluru, Karnataka 560012, India',
-      lat: 13.0219,
-      lng: 77.5671,
-    },
-    notableAlumni: ['C. V. Raman', 'Homi J. Bhabha', 'Vikram Sarabhai'],
-    popularPrograms: ['Physics', 'Biology', 'Materials Science'],
-  },
 ];
+
+    

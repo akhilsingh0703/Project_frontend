@@ -1,3 +1,5 @@
+
+      
 import Image from 'next/image';
 import Link from 'next/link';
 import type { University } from '@/lib/types';
@@ -12,34 +14,42 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MapPin, Percent, Users, ArrowRight } from 'lucide-react';
 import { AddToCompareButton } from './AddToCompareButton';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 interface UniversityCardProps {
   university: University;
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
+  const bannerImage = PlaceHolderImages.find(img => img.id === 'university-banner');
+  const logoImage = PlaceHolderImages.find(img => img.id === 'university-logo');
+
   return (
     <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <CardHeader className="p-0">
         <Link href={`/universities/${university.id}`}>
           <div className="relative h-48 w-full">
-            <Image
-              src={university.images.banner}
-              alt={`${university.name} banner`}
-              fill
-              className="object-cover"
-              data-ai-hint="university campus"
-            />
+            {bannerImage && (
+              <Image
+                src={bannerImage.imageUrl}
+                alt={`${university.name} banner`}
+                fill
+                className="object-cover"
+                data-ai-hint="university campus"
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 flex items-center gap-4">
               <div className="relative h-16 w-16 rounded-lg overflow-hidden border-2 border-background bg-background shadow-md">
-                <Image
-                  src={university.images.logo}
-                  alt={`${university.name} logo`}
-                  fill
-                  className="object-contain p-1"
-                  data-ai-hint="logo crest"
-                />
+                {logoImage && (
+                  <Image
+                    src={logoImage.imageUrl}
+                    alt={`${university.name} logo`}
+                    fill
+                    className="object-contain p-1"
+                    data-ai-hint="logo crest"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -93,3 +103,6 @@ export function UniversityCard({ university }: UniversityCardProps) {
     </Card>
   );
 }
+
+
+    
