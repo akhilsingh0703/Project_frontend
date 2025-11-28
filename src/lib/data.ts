@@ -8,18 +8,19 @@ let universityCache: University[] | null = null;
 
 // Helper to ensure a university object has valid data
 const sanitizeUniversity = (uni: any, id: string): University => {
+  const validId = id || 'missing-id'; // Ensure ID is never empty
   return {
-    id: id,
+    id: validId,
     name: uni.name || 'Unknown University',
     location: uni.location || { city: 'Unknown', state: 'Unknown', country: 'Unknown' },
     description: uni.description || '',
     images: {
-      logo: uni.images?.logo || `https://picsum.photos/seed/${id}-logo/200/200`,
-      banner: uni.images?.banner || `https://picsum.photos/seed/${id}-banner/600/400`,
+      logo: uni.images?.logo || `https://picsum.photos/seed/${validId}-logo/200/200`,
+      banner: uni.images?.banner || `https://picsum.photos/seed/${validId}-banner/600/400`,
       campus: Array.isArray(uni.images?.campus) && uni.images.campus.length > 0 ? uni.images.campus : [
-        `https://picsum.photos/seed/${id}-campus1/800/600`,
-        `https://picsum.photos/seed/${id}-campus2/800/600`,
-        `https://picsum.photos/seed/${id}-campus3/800/600`,
+        `https://picsum.photos/seed/${validId}-campus1/800/600`,
+        `https://picsum.photos/seed/${validId}-campus2/800/600`,
+        `https://picsum.photos/seed/${validId}-campus3/800/600`,
       ],
     },
     website: uni.website || '',
@@ -66,6 +67,8 @@ export const getUniversities = async (): Promise<University[]> => {
 
 // Get a single university by its ID from Firestore
 export const getUniversityById = async (id: string): Promise<University | undefined> => {
+    if (!id) return undefined;
+
   if (universityCache) {
     const cachedUniversity = universityCache.find(uni => uni.id === id);
     if (cachedUniversity) {

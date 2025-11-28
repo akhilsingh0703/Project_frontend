@@ -19,6 +19,10 @@ interface UniversityCardProps {
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
+  if (!university || !university.id) {
+    return null; // Don't render if university data is incomplete
+  }
+
   const bannerImageUrl = university.images?.banner || `https://picsum.photos/seed/${university.id}-banner/600/400`;
   const logoImageUrl = university.images?.logo || `https://picsum.photos/seed/${university.id}-logo/200/200`;
   

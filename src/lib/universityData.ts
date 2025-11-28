@@ -39,13 +39,13 @@ export const universityData: Omit<University, 'id'>[] = [
     studentPopulation: 132435,
     quickFacts: {
         acceptanceRate: 67,
-        studentFacultyRatio: '21:1',
-        graduationRate: 85,
+        studentFacultyRatio: '16:1',
+        graduationRate: 80,
     },
     tuition: {
         undergraduate: 200000,
-        graduate: 20000,
-        roomAndBoard: 75000,
+        graduate: 150000,
+        roomAndBoard: 100000,
     },
     courses: [
       {
@@ -137,15 +137,14 @@ export const universityData: Omit<University, 'id'>[] = [
     setting: 'Urban',
     studentPopulation: 10000,
     quickFacts: {
-      satRange: '1450-1570',
-      acceptanceRate: 17,
-      studentFacultyRatio: '13:1',
+      acceptanceRate: 10,
+      studentFacultyRatio: '8:1',
       graduationRate: 95,
     },
     tuition: {
         undergraduate: 220000,
-        graduate: 180000,
-        roomAndBoard: 90000,
+        graduate: 175000,
+        roomAndBoard: 120000,
     },
     courses: [
       {
@@ -206,7 +205,11 @@ export const universityData: Omit<University, 'id'>[] = [
     images: {
       logo: 'https://images.shiksha.com/mediadata/images/1650542874phpqTvh4T.jpeg',
       banner: 'https://images.shiksha.com/mediadata/images/1650542961phpkgitSL.jpeg',
-      campus: [],
+      campus: [
+        'https://picsum.photos/seed/cutm_campus1/800/600',
+        'https://picsum.photos/seed/cutm_campus2/800/600',
+        'https://picsum.photos/seed/cutm_campus3/800/600',
+      ],
     },
     website: 'https://cutm.ac.in/',
     establishedYear: 2005,
