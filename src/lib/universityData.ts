@@ -43,8 +43,8 @@ export const universityData: Omit<University, 'id'>[] = [
         graduationRate: 80,
     },
     tuition: {
-        undergraduate: 200000,
-        graduate: 150000,
+        undergraduate: 20000,
+        graduate: 15000,
         roomAndBoard: 100000,
     },
     courses: [
