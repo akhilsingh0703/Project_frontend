@@ -34,9 +34,9 @@ interface UniversityDetailPageProps {
 }
 
 // This page is now fully asynchronous
-export default async function UniversityDetailPage({ params }: UniversityDetailPageProps) {
+export default async function UniversityDetailPage({ params: { id } }: UniversityDetailPageProps) {
   // Await the university data before proceeding
-  const university = await getUniversityById(params.id);
+  const university = await getUniversityById(id);
 
   if (!university) {
     notFound();
@@ -200,7 +200,7 @@ export default async function UniversityDetailPage({ params }: UniversityDetailP
                     </CardHeader>
                     <CardContent>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {campusImages.map((imgSrc, i) => (
+                            {(university.images.campus?.every(img => img.startsWith('http')) ? university.images.campus : university.images.campus.map(img => `/${img}`)).map((imgSrc, i) => (
                                 <div key={i} className="relative aspect-video rounded-lg overflow-hidden">
                                     <Image src={imgSrc} alt={`Campus life ${i+1}`} fill className="object-cover"/>
                                 </div>
