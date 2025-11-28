@@ -1,8 +1,24 @@
 
-import { db } from '../src/lib/firebase';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, writeBatch, doc } from 'firebase/firestore';
 import { universityData } from '../src/lib/universityData';
-import { collection, writeBatch, doc } from 'firebase/firestore';
 import type { University } from '../src/lib/types';
+
+// NOTE: This is a partial, temporary Firebase config for the upload script only.
+// The main app uses a different initialization method.
+const firebaseConfig = {
+  apiKey: "AIzaSyCw5ei9emypQefTo91rUuQsxSec6MyAPsY",
+  authDomain: "studio-6440466613-89ca6.firebaseapp.com",
+  projectId: "studio-6440466613-89ca6",
+  storageBucket: "studio-6440466613-89ca6.appspot.com",
+  messagingSenderId: "97580529198",
+  appId: "1:97580529198:web:0c496e23af214f64d691bf",
+  databaseURL: "https://studio-6440466613-89ca6-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 
 const uploadUniversities = async () => {
   const universitiesCollection = collection(db, 'universities');
@@ -36,7 +52,7 @@ const uploadUniversities = async () => {
     console.error(`Error uploading universities:`, error);
   }
 
-  console.log('University data upload finished.');
+  console.log('University data upload finished. You may need to kill this script process manually (Ctrl+C).');
 };
 
 uploadUniversities().catch(error => {
