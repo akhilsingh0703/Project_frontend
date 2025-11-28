@@ -29,18 +29,13 @@ import { Summary } from './Summary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CoursesAndFees } from './CoursesAndFees';
 
-export async function generateStaticParams() {
-  const universities = await getUniversities();
-  return universities.map((university) => ({
-    id: university.id,
-  }));
+interface UniversityDetailPageProps {
+  params: { id: string };
 }
 
-export default async function UniversityDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+// This page is now fully asynchronous
+export default async function UniversityDetailPage({ params }: UniversityDetailPageProps) {
+  // Await the university data before proceeding
   const university = await getUniversityById(params.id);
 
   if (!university) {
@@ -48,7 +43,19 @@ export default async function UniversityDetailPage({
   }
 
   const mapImage = PlaceHolderImages.find((img) => img.id === 'map-placeholder');
-  const logoSrc = university.images.logo || `https://picsum.photos/seed/${university.id}-logo/200/200`;
+
+  // Add checks to ensure image URLs are valid, with fallbacks
+  const logoSrc = university.images?.logo?.startsWith('http') 
+    ? university.images.logo 
+    : `https://picsum.photos/seed/${university.id}-logo/200/200`;
+
+  const campusImages = university.images.campus?.every(img => img.startsWith('http'))
+    ? university.images.campus
+    : [
+        `https://picsum.photos/seed/${university.id}-campus1/800/600`,
+        `https://picsum.photos/seed/${university.id}-campus2/800/600`,
+        `https://picsum.photos/seed/${university.id}-campus3/800/600`,
+      ];
 
   const quickFacts = [
     { label: 'GPA', value: university.quickFacts.gpa || 'N/A', icon: GraduationCap },
@@ -193,7 +200,7 @@ export default async function UniversityDetailPage({
                     </CardHeader>
                     <CardContent>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {university.images.campus.map((imgSrc, i) => (
+                            {campusImages.map((imgSrc, i) => (
                                 <div key={i} className="relative aspect-video rounded-lg overflow-hidden">
                                     <Image src={imgSrc} alt={`Campus life ${i+1}`} fill className="object-cover"/>
                                 </div>
@@ -278,5 +285,3 @@ export default async function UniversityDetailPage({
     </div>
   );
 }
-
-    

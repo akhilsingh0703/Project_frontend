@@ -23,8 +23,13 @@ export function UniversityCard({ university }: UniversityCardProps) {
     return null; // Don't render if university data is incomplete
   }
 
-  const bannerImageUrl = university.images?.banner || `https://picsum.photos/seed/${university.id}-banner/600/400`;
-  const logoImageUrl = university.images?.logo || `https://picsum.photos/seed/${university.id}-logo/200/200`;
+  const bannerImageUrl = university.images?.banner?.startsWith('http') 
+    ? university.images.banner 
+    : `https://picsum.photos/seed/${university.id}-banner/600/400`;
+    
+  const logoImageUrl = university.images?.logo?.startsWith('http')
+    ? university.images.logo
+    : `https://picsum.photos/seed/${university.id}-logo/200/200`;
   
   const undergraduateTuition = university.tuition?.undergraduate;
 
