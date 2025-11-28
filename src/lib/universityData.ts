@@ -13,12 +13,12 @@ export const universityData: Omit<University, 'id'>[] = [
       'A premier university in India, known for its high standards in teaching and research and attracts eminent scholars to its faculty.',
     website: 'http://www.du.ac.in',
     images: {
-      logo: 'https://picsum.photos/seed/delhi_logo/200/200',
-      banner: 'https://picsum.photos/seed/delhi_banner/800/600',
+      logo: 'https://picsum.photos/seed/delhi-logo/200/200',
+      banner: 'https://picsum.photos/seed/delhi-banner/800/600',
       campus: [
-        'https://picsum.photos/seed/delhi_campus1/800/600',
-        'https://picsum.photos/seed/delhi_campus2/800/600',
-        'https://picsum.photos/seed/delhi_campus3/800/600',
+        'https://picsum.photos/seed/delhi-campus1/800/600',
+        'https://picsum.photos/seed/delhi-campus2/800/600',
+        'https://picsum.photos/seed/delhi-campus3/800/600',
       ],
     },
     programs: [
@@ -112,12 +112,12 @@ export const universityData: Omit<University, 'id'>[] = [
       'One of the top engineering colleges in India, IIT Bombay is renowned for its flagship programs in engineering and technology.',
     website: 'http://www.iitb.ac.in',
     images: {
-      logo: 'https://picsum.photos/seed/iitb_logo/200/200',
-      banner: 'https://picsum.photos/seed/iitb_banner/800/600',
+      logo: 'https://picsum.photos/seed/iitb-logo/200/200',
+      banner: 'https://picsum.photos/seed/iitb-banner/800/600',
       campus: [
-        'https://picsum.photos/seed/iitb_campus1/800/600',
-        'https://picsum.photos/seed/iitb_campus2/800/600',
-        'https://picsum.photos/seed/iitb_campus3/800/600',
+        'https://picsum.photos/seed/iitb-campus1/800/600',
+        'https://picsum.photos/seed/iitb-campus2/800/600',
+        'https://picsum.photos/seed/iitb-campus3/800/600',
       ],
     },
     programs: [
@@ -147,7 +147,7 @@ export const universityData: Omit<University, 'id'>[] = [
         roomAndBoard: 120000,
     },
     courses: [
-      {
+       {
         category: 'Undergraduate',
         name: 'B.Tech. Computer Science',
         rating: 4.9,
@@ -206,9 +206,9 @@ export const universityData: Omit<University, 'id'>[] = [
       logo: 'https://images.shiksha.com/mediadata/images/1650542874phpqTvh4T.jpeg',
       banner: 'https://images.shiksha.com/mediadata/images/1650542961phpkgitSL.jpeg',
       campus: [
-        'https://picsum.photos/seed/cutm_campus1/800/600',
-        'https://picsum.photos/seed/cutm_campus2/800/600',
-        'https://picsum.photos/seed/cutm_campus3/800/600',
+        'https://picsum.photos/seed/cutm-campus1/800/600',
+        'https://picsum.photos/seed/cutm-campus2/800/600',
+        'https://picsum.photos/seed/cutm-campus3/800/600',
       ],
     },
     website: 'https://cutm.ac.in/',
