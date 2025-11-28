@@ -59,3 +59,4 @@ uploadUniversities().catch(error => {
   console.error("An unhandled error occurred during the upload process:", error);
   process.exit(1);
 });
+    
