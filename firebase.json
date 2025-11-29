@@ -5,7 +5,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "apphosting": {
+      "backend": "myappuf"
+    }
   },
   "firestore": {
     "rules": "firestore.rules"

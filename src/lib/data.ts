@@ -6,18 +6,29 @@ import type { University } from './types';
 // Server-side cache for universities
 let universityCache: University[] | null = null;
 
+const isValidUrl = (url: string | undefined): boolean => {
+  if (!url) return false;
+  try {
+    new URL(url);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+
 // Helper to ensure a university object has valid data
 const sanitizeUniversity = (uni: any, id: string): University => {
-  const validId = id || 'missing-id'; // Ensure ID is never empty
+  const validId = id || 'missing-id';
   return {
     id: validId,
     name: uni.name || 'Unknown University',
     location: uni.location || { city: 'Unknown', state: 'Unknown', country: 'Unknown' },
     description: uni.description || '',
     images: {
-      logo: uni.images?.logo || `https://picsum.photos/seed/${validId}-logo/200/200`,
-      banner: uni.images?.banner || `https://picsum.photos/seed/${validId}-banner/600/400`,
-      campus: Array.isArray(uni.images?.campus) && uni.images.campus.length > 0 ? uni.images.campus : [
+      logo: isValidUrl(uni.images?.logo) ? uni.images.logo : `https://picsum.photos/seed/${validId}-logo/200/200`,
+      banner: isValidUrl(uni.images?.banner) ? uni.images.banner : `https://picsum.photos/seed/${validId}-banner/600/400`,
+      campus: Array.isArray(uni.images?.campus) && uni.images.campus.every(isValidUrl) ? uni.images.campus : [
         `https://picsum.photos/seed/${validId}-campus1/800/600`,
         `https://picsum.photos/seed/${validId}-campus2/800/600`,
         `https://picsum.photos/seed/${validId}-campus3/800/600`,

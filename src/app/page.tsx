@@ -50,8 +50,9 @@ export default async function Home() {
   ];
 
   const getStreamCount = (stream: string) => {
+    if (!universities || universities.length === 0) return 0;
     return universities.filter(uni => 
-      uni.programs.some(program => program.department === stream)
+      uni.programs && uni.programs.some(program => program.department === stream)
     ).length;
   };
 
@@ -198,11 +199,17 @@ export default async function Home() {
               A curated list of the best colleges in India.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {topColleges.map((uni) => (
-              <UniversityCard key={uni.id} university={uni} />
-            ))}
-          </div>
+          {topColleges.length > 0 ? (
+            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {topColleges.map((uni) => (
+                <UniversityCard key={uni.id} university={uni} />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-12 text-center text-muted-foreground">
+                <p>No colleges available to display.</p>
+            </div>
+          )}
           <div className="mt-12 text-center">
             <Button asChild size="lg" variant="outline">
               <Link href="/universities">

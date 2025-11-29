@@ -8,5 +8,5 @@ runConfig:
 
 # Defines a backend that will be created in Cloud Run
 backend:
-  # The location to build the server bundle for the backend.
-  source: backend
+  # The location of the Next.js app
+  source: .
