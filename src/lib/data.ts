@@ -52,6 +52,11 @@ const sanitizeUniversity = (uni: any, id: string): University => {
 
 // Get all universities from Firestore with caching
 export const getUniversities = async (): Promise<University[]> => {
+    if (!adminDb) {
+        console.warn('Firebase Admin is not initialized. Skipping Firestore fetch.');
+        return [];
+    }
+
   if (universityCache) {
     return universityCache;
   }
@@ -77,7 +82,10 @@ export const getUniversities = async (): Promise<University[]> => {
 
 // Get a single university by its ID from Firestore
 export const getUniversityById = async (id: string): Promise<University | undefined> => {
-    if (!id) return undefined;
+    if (!id || !adminDb) {
+        if(!adminDb) console.warn('Firebase Admin is not initialized. Skipping Firestore fetch.');
+        return undefined;
+    };
 
   // Use cache if available
   if (universityCache) {
