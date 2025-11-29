@@ -1,6 +1,5 @@
 
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
-import { db } from './firebase'; // Assuming you have initialized Firebase and exported the db instance
+import { adminDb } from './firebase-admin';
 import type { University } from './types';
 
 // Server-side cache for universities
@@ -9,8 +8,8 @@ let universityCache: University[] | null = null;
 const isValidUrl = (url: string | undefined): boolean => {
   if (!url) return false;
   try {
-    new URL(url);
-    return true;
+    // Use a simple check, as new URL() can be restrictive.
+    return url.startsWith('http://') || url.startsWith('https://');
   } catch (e) {
     return false;
   }
@@ -58,7 +57,7 @@ export const getUniversities = async (): Promise<University[]> => {
   }
 
   try {
-    const querySnapshot = await getDocs(collection(db, 'universities'));
+    const querySnapshot = await adminDb.collection('universities').get();
     if (querySnapshot.empty) {
       console.log('No universities found.');
       return [];
@@ -80,6 +79,7 @@ export const getUniversities = async (): Promise<University[]> => {
 export const getUniversityById = async (id: string): Promise<University | undefined> => {
     if (!id) return undefined;
 
+  // Use cache if available
   if (universityCache) {
     const cachedUniversity = universityCache.find(uni => uni.id === id);
     if (cachedUniversity) {
@@ -88,10 +88,10 @@ export const getUniversityById = async (id: string): Promise<University | undefi
   }
 
   try {
-    const docRef = doc(db, 'universities', id);
-    const docSnap = await getDoc(docRef);
+    const docRef = adminDb.collection('universities').doc(id);
+    const docSnap = await docRef.get();
 
-    if (docSnap.exists()) {
+    if (docSnap.exists) {
       return sanitizeUniversity(docSnap.data(), docSnap.id);
     } else {
       console.log('No such document!');
